@@ -43,12 +43,12 @@ variable "create_route" {
   default = false
 }
 
-variable "destination_cidr" {
-  type    = string
-  default = ""
+variable "destination_cidrs" {
+  type    = list(string)
+  default = []
 }
 
-variable "next_hop" {
-  type    = string
-  default = ""
+variable "next_hops" {
+  type    = list(string)
+  default = []
 }

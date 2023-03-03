@@ -75,5 +75,5 @@ variable "public_ip_network_name" {
 
 variable "port_security_enabled" {
   type    = bool
-  default = false
+  default = true
 }
