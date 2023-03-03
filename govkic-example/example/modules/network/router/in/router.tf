@@ -57,3 +57,19 @@ resource "openstack_networking_port_v2" "port_b" {
 
   port_security_enabled = var.port_security_enabled
 }
+
+################################################################################
+# Routing Table
+################################################################################
+
+locals {
+  min_count = min(length(var.destination_cidr), length(var.next_hop))
+}
+
+resource "openstack_networking_router_route_v2" "router_route" {
+  count             = var.create_route && local.min_count > 0 ? min(length(var.destination_cidr), length(var.next_hop)) : 0
+  region            = var.region_name
+  router_id         = openstack_networking_router_v2.router_internal.id
+  destination_cidr  = var.destination_cidr[count.index]
+  next_hop          = var.next_hop[count.index]
+}

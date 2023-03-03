@@ -45,5 +45,20 @@ variable "fixed_ip_address" {
 
 variable "port_security_enabled" {
   type    = bool
+  default = true
+}
+
+variable "create_route" {
+  type    = bool
   default = false
+}
+
+variable "destination_cidr" {
+  type    = string
+  default = ""
+}
+
+variable "next_hop" {
+  type    = string
+  default = ""
 }

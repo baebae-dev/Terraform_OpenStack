@@ -72,3 +72,8 @@ variable "public_ip_network_name" {
   type    = string
   default = null
 }
+
+variable "port_security_enabled" {
+  type    = bool
+  default = false
+}

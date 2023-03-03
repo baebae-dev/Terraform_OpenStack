@@ -37,6 +37,8 @@ resource "openstack_networking_port_v2" "port" {
     subnet_id = var.subnet_id
     ip_address = var.fixed_ip_address == null ? null : var.fixed_ip_address
   }
+
+  port_security_enabled = var.port_security_enabled
 }
 
 ################################################################################
