@@ -57,3 +57,12 @@ variable "enable_nat_instance" {
   type    = bool
   default = false
 }
+
+#variable "tags" {
+#  type    = object({
+#    Name  = optional(string),
+#    Team  = optional(string),
+#    Owner = optional(string)
+#  })
+#  default = {}
+#}
