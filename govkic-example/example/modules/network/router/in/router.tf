@@ -69,6 +69,7 @@ locals {
 resource "openstack_networking_router_route_v2" "router_route" {
   count             = var.create_route && local.min_length > 0 ? min(length(var.destination_cidrs), length(var.next_hops)) : 0
   region            = var.region_name
+
   router_id         = openstack_networking_router_v2.router_internal.id
   destination_cidr  = var.destination_cidrs[count.index]
   next_hop          = var.next_hops[count.index]

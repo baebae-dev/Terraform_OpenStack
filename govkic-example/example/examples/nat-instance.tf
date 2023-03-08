@@ -23,22 +23,18 @@ module "nat_instance" {
   public_ip_network_name = "ext-private-net1"
 }
 
-locals {
-  rt_dependencies = [
-    module.vpc,
-    module.external_router,
-    module.internal_router,
-    module.nat_instance
-  ]
-}
-
 module "routing_table_ext" {
   source           = "../modules/network/router/route"
   router_id        = module.external_router.ext_router_id
   destination_cidrs = ["192.168.10.0/24"]
   next_hops         = ["192.168.1.1"]
 
-  depends_on = local.rt_dependencies
+  depends_on = [
+    module.vpc,
+    module.external_router,
+    module.internal_router,
+    module.nat_instance
+  ]
 }
 
 module "routing_table_in" {
@@ -47,5 +43,10 @@ module "routing_table_in" {
   destination_cidrs = ["0.0.0.0/0"]
   next_hops         = ["192.168.1.254"]
 
-  depends_on = local.rt_dependencies
+  depends_on = [
+    module.vpc,
+    module.external_router,
+    module.internal_router,
+    module.nat_instance
+  ]
 }
