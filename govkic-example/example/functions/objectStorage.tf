@@ -1,6 +1,7 @@
 # objectStorage
 module "objectStorage" {
-  source       = "../../modules/objectStorage"
+  source        = "../primitives/objectStorage"
+
   object_storage_name = "${var.prefix}${var.object_storage_name}"
   tenant_id = var.tenant_id
   user_domain_name = var.user_domain_name
