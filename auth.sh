@@ -1,7 +1,7 @@
 #!/bin/bash
 export openAPI="True"
-export openapi_userid="e454f075d6fc4b1b8e0f2287df6061df"
-export openapi_user_password="{p2pI0rt1u1toZSJcOCw9yUVQMKNQerqw9hVX3P8zURk=}0a07b97622460e7694168ab7ce5b89fa933d922f287b549f85ecff87b7cc6927"
+export openapi_userid="e170f8eca92b46b58eb7bcc5000803b6"
+export openapi_user_password="{/kvhMX8vFMeTe8gOvOXwhfuKN1yEcPb+oteJBBnxsac=}c9e4e6ce91dabd1b932cba9d08ac3889d516aad8f9477d0bd9f10ede7a320a02"
 
 export tenant_id="8323ba34b836415a98bc45c8b715dcfc"
 
@@ -82,8 +82,8 @@ fi
 
 echo "\
 tenant_id = "\""${tenant_id}"\""\n\
-auth_url = "\"""https://gov-cbt-keystone.kakaoicloud.in/v3""\""\n\
-endpoint_override_url = "\"""https://cbt-openapi.gov.kakaoicloud.com/api""\""\n\
+auth_url = "\"""https://cbt-openapi.gov.kakaoicloud.com/api/identity/v3/""\""\n\
+endpoint_override_url = "\"""https://cbt-openapi.gov.kakaoicloud.com/api/""\""\n\
 user_domain_name = ${user_domain_name}\n\
 openapi_user_name = ${openapi_user_name}\n\
 openapi_user_password = "\""${openapi_user_password}"\""\n\
