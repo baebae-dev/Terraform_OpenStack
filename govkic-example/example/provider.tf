@@ -5,6 +5,12 @@ provider "openstack" {
   password    = var.openapi_user_password
   auth_url    = var.auth_url
   region      = "RegionOne"
+  endpoint_overrides = {
+    "network"  = "${var.endpoint_override_url}/network/"
+    "volumev3" = "${var.endpoint_override_url}/volume/${var.tenant_id}/"
+    "compute"  = "${var.endpoint_override_url}/compute/"
+    "image"    = "${var.endpoint_override_url}/images/"
+  }
 }
 
 provider "openstack" {
