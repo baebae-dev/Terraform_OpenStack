@@ -1,10 +1,13 @@
 # Terraform으로 공공 클라우드 설치하기
 ## 리소스 생성 방법
-### 준비
-- openAPI 인증값 설정
+### 준비   
+1. openAPI 인증값 설정
 > auth.sh 파일 내 프로젝트 id, user id, password 입력 후 실행   
 `` sh auth.sh ``   
-> secret.tfvars 파일 자동 생성
+> secret.tfvars 파일 자동 생성   
+2. prefix 수정
+> 생성되는 컴포넌트 명 중복 충돌을 막고자
+> [terraform.tfvars](https://cbt-gitlab.gov.kakaoicloud.com/bell.coco/govcloud-terraform/-/blob/master/terraform.tfvars)의 prefix 변수값 본인 이름으로 수정 후 사용    
 ### terraform 실행
 - 설정 파일에 모듈 등록   
   ``terraform init ``

@@ -5,7 +5,7 @@ variable "public_network_ids" {
 
 variable "prefix" {
   type = string
-  default = "bell-"
+  default = null
 }
 
 variable "object_storage_name" {

@@ -14,6 +14,6 @@ image_name         = "Ubuntu18.04.6-Cloud"
 public_ip_network_name = "ext-private-net1"
 block_device_delete_on_termination = false
 object_storage_name = "tf-backend-container"
-prefix = "bell-"
+prefix = "bell-" # 본인 이름으로 변경하고 사용
 db_count = 1
 env = "test"
