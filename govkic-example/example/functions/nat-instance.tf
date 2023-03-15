@@ -6,7 +6,7 @@
 #################################################################################
 
 module "nat_instance" {
-  source        = "../modules/compute/instance"
+  source        = "../primitives/compute/instance"
 
   count         = 1
   instance_name = "jason-tf-nat-instance-${count.index}"
@@ -24,7 +24,7 @@ module "nat_instance" {
 }
 
 module "routing_table_ext" {
-  source           = "../modules/network/router/route"
+  source           = "../primitives/network/router/route"
   router_id        = module.external_router.ext_router_id
   destination_cidrs = ["192.168.10.0/24"]
   next_hops         = ["192.168.1.1"]
@@ -38,7 +38,7 @@ module "routing_table_ext" {
 }
 
 module "routing_table_in" {
-  source           = "../modules/network/router/route"
+  source           = "../primitives/network/router/route"
   router_id        = module.internal_router.in_router_id
   destination_cidrs = ["0.0.0.0/0"]
   next_hops         = ["192.168.1.254"]

@@ -2,56 +2,36 @@
 # Router
 ################################################################################
 
-resource "openstack_networking_router_v2" "router_internal" {
-  name                = "in-${var.router_name}"
+resource "openstack_networking_router_v2" "router_external" {
+  name                = "ext-${var.router_name}"
   region              = var.region_name
   admin_state_up      = var.admin_state_up
+  external_network_id = var.external_network_id
 }
 
 ################################################################################
 # Router Interface
 ################################################################################
 
-resource "openstack_networking_router_interface_v2" "router_interface_a" {
-  count     = length(var.subnet_ids_a)
+resource "openstack_networking_router_interface_v2" "router_interface" {
+  count     = length(var.public_subnet_ids)
   region    = var.region_name
-  router_id = openstack_networking_router_v2.router_internal.id
-  port_id = openstack_networking_port_v2.port_a[count.index].id
-}
-
-resource "openstack_networking_router_interface_v2" "router_interface_b" {
-  count     = length(var.subnet_ids_b)
-  region    = var.region_name
-  router_id = openstack_networking_router_v2.router_internal.id
-  port_id = openstack_networking_port_v2.port_b[count.index].id
+  router_id = openstack_networking_router_v2.router_external.id
+  port_id   = openstack_networking_port_v2.port[count.index].id
 }
 
 ################################################################################
 # Port
 ################################################################################
 
-resource "openstack_networking_port_v2" "port_a" {
-  count          = length(var.subnet_ids_a)
+resource "openstack_networking_port_v2" "port" {
+  count          = length(var.public_subnet_ids)
   region         = var.region_name
-  network_id     = var.network_ids_a[count.index]
   admin_state_up = var.admin_state_up
+  network_id     = var.network_ids[count.index]
 
   fixed_ip {
-    subnet_id  = var.subnet_ids_a[count.index]
-    ip_address = var.fixed_ip_address == null ? null : var.fixed_ip_address
-  }
-
-  port_security_enabled = var.port_security_enabled
-}
-
-resource "openstack_networking_port_v2" "port_b" {
-  count          = length(var.subnet_ids_b)
-  region         = var.region_name
-  network_id     = var.network_ids_b[count.index]
-  admin_state_up = var.admin_state_up
-
-  fixed_ip {
-    subnet_id  = var.subnet_ids_b[count.index]
+    subnet_id  = var.public_subnet_ids[count.index]
     ip_address = var.fixed_ip_address == null ? null : var.fixed_ip_address
   }
 
@@ -70,7 +50,13 @@ resource "openstack_networking_router_route_v2" "router_route" {
   count             = var.create_route && local.min_length > 0 ? min(length(var.destination_cidrs), length(var.next_hops)) : 0
   region            = var.region_name
 
-  router_id         = openstack_networking_router_v2.router_internal.id
+  router_id         = openstack_networking_router_v2.router_external.id
   destination_cidr  = var.destination_cidrs[count.index]
   next_hop          = var.next_hops[count.index]
+
+#  depends_on = [
+#    openstack_networking_router_v2.router_external,
+#    openstack_networking_router_interface_v2.router_interface,
+#    openstack_networking_port_v2.port
+#  ]
 }

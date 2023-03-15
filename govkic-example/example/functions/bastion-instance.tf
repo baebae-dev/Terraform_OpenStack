@@ -1,5 +1,5 @@
 module "bastion_instance" {
-  source        = "../modules/compute/instance"
+  source        = "../primitives/compute/instance"
 
   count         = 1
   instance_name = "jason-tf-bastion-instance-${count.index}"

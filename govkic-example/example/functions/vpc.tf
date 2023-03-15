@@ -1,5 +1,5 @@
 module "vpc" {
-  source               = "../modules/network/vpc"
+  source               = "../primitives/network/vpc"
   network_name         = "jason-tf-network"
   subnet_name          = "jason-tf-subnet"
 
@@ -8,7 +8,7 @@ module "vpc" {
 }
 
 module "external_router" {
-  source              = "../modules/network/router/ext"
+  source              = "../primitives/network/router/ext"
   router_name         = "jason-tf-router-ext"
   external_network_id = "a48f21af-04fe-4559-8085-a2bb0ae485ca"
 
@@ -19,7 +19,7 @@ module "external_router" {
 }
 
 module "internal_router" {
-  source              = "../modules/network/router/in"
+  source              = "../primitives/network/router/in"
   router_name         = "jason-tf-router-in"
 
   network_ids_a       = module.vpc.public_network_ids

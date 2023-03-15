@@ -1,3 +1,3 @@
 module "all" {
-  source = "./examples"
+  source = "./functions"
 }

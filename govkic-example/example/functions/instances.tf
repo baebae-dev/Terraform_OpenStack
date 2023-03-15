@@ -1,5 +1,5 @@
 module "app_server" {
-  source        = "../modules/compute/instance"
+  source        = "../primitives/compute/instance"
 
   count         = 3
   instance_name = "jason-tf-instance-app-${count.index}"
@@ -15,3 +15,11 @@ module "app_server" {
 
   port_name = "jason-tf-port-${count.index}"
 }
+#
+#data "terraform_remote_state" "terraform_output" {
+#  backend = "http"
+#
+#  config = {
+#    address = "https://gov-cbt-objectstorage.kakaoicloud.in/v1/8323ba34b836415a98bc45c8b715dcfc/bell-tf-backend-container/test%2Fterraform.tfstate"
+#  }
+#}

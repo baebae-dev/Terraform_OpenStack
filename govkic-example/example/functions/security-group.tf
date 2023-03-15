@@ -1,5 +1,5 @@
 module "sg_pub" {
-  source = "../modules/network/security-group"
+  source = "../primitives/network/security-group"
   sec_group_name = "jason-tf-sg-pub"
   description = "my public security group"
 
@@ -32,7 +32,7 @@ module "sg_pub" {
 }
 
 module "sg_priv" {
-  source = "../modules/network/security-group"
+  source = "../primitives/network/security-group"
   sec_group_name = "jason-tf-sg-priv"
   description = "my private security group"
 
@@ -65,7 +65,7 @@ module "sg_priv" {
 }
 
 module "sg_bastion" {
-  source = "../modules/network/security-group"
+  source = "../primitives/network/security-group"
   sec_group_name = "jason-tf-sg-bastion"
   description = "my bastion security group"
 
