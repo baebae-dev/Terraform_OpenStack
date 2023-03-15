@@ -1,6 +1,6 @@
 tenant_id = "8323ba34b836415a98bc45c8b715dcfc"
 auth_url = "https://gov-cbt-keystone.kakaoicloud.in/v3"
-endpoint_override_url    = "https://cbt-openapi.gov.kakaoicloud.com/api"
+endpoint_endpoint_override_url    = "https://cbt-openapi.gov.kakaoicloud.com/api"override_url    = "https://cbt-openapi.gov.kakaoicloud.com/api"
 user_domain_name = "20211123143107@kakaoenterprise.com"
 openapi_user_name = "TF20230309180554-open-api"
 openapi_user_password = "{zo51TOZIcm4Q/BKJQPTsoAJYe6Lkejjw5vMHMfe0O5Y=}746a1439c42a5f9b9d922461c145b0731a14cf5ed14909dfc19ff7ff32051545"
