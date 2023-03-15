@@ -1,11 +1,21 @@
-variable "public_network_ids" {
-  type    = list(string)
-  default = []
-}
-
 variable "prefix" {
   type = string
   default = null
+}
+
+variable "router_name" {
+  type    = string
+  default = ""
+}
+
+variable "subnet_name" {
+  type    = string
+  default = ""
+}
+
+variable "network_name" {
+  type    = string
+  default = ""
 }
 
 variable "object_storage_name" {
@@ -37,7 +47,7 @@ variable "keypair_name" {
   default = "tf-keypair"
 }
 
-variable "db_count" {
+variable "volume_count" {
   type = number
   default = 1
 }
@@ -47,12 +57,34 @@ variable "volume_name" {
   default = "tf-volume"
 }
 
-variable "db_data_volume_size" {
+variable "volume_size" {
   type = number
   default = 500
   description = "number 500 = 500GB"
 }
 
+variable "public_ip_network_name" {
+  type    = string
+  default = null
+}
+
+variable "sec_group_name_pub" {
+  type    = string
+  default = ""
+}
+
+variable "sec_group_name_priv" {
+  type    = string
+  default = ""
+}
+
+variable "sec_group_name_bastion" {
+  type    = string
+  default = ""
+}
+
+
+##### auth #####
 variable "tenant_id" {
   description = "tenant_id"
   type        = string
@@ -93,24 +125,4 @@ variable "openapi_user_password" {
   description = "openapi_user_password"
   type        = string
   sensitive   = true
-}
-
-variable "public_ip_network_name" {
-  type    = string
-  default = null
-}
-
-variable "sec_group_name_pub" {
-  type    = string
-  default = ""
-}
-
-variable "sec_group_name_priv" {
-  type    = string
-  default = ""
-}
-
-variable "sec_group_name_bastion" {
-  type    = string
-  default = ""
 }
