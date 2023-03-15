@@ -9,7 +9,7 @@ module "nat_instance" {
   source        = "../primitives/compute/instance"
 
   count         = 1
-  instance_name = "jason-tf-nat-instance-${count.index}"
+  instance_name = "${var.prefix}${var.nat_instance_name}}-${count.index}"
   keypair_name  = module.keypair.keypair_name
 
   network_id    = module.vpc.public_network_ids[0]
@@ -18,9 +18,9 @@ module "nat_instance" {
   port_security_enabled = false
   fixed_ip_address = "192.168.1.254"
 
-  port_name = "jason-tf-port-${count.index}"
+  port_name = "${var.prefix}${var.port_name}-${count.index}"
   is_public = true
-  public_ip_network_name = "ext-private-net1"
+  public_ip_network_name = "${var.prefix}${var.public_ip_network_name}"
 }
 
 module "routing_table_ext" {

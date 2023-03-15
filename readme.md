@@ -97,5 +97,6 @@
  ┣ 📜secret.tfvars
  ┣ 📜terraform.tfstate
  ┣ 📜variables.tf
+ ┣ 📜terraform.tfvars
  ┗ 📜versions.tf 
 ```

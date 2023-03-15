@@ -2,7 +2,7 @@ module "app_server" {
   source        = "../primitives/compute/instance"
 
   count         = 3
-  instance_name = "jason-tf-instance-app-${count.index}"
+  instance_name = "${var.prefix}${var.instance_name}-${count.index}"
   keypair_name  = module.keypair.keypair_name
 
   network_id    = module.vpc.private_network_ids[0]
@@ -13,7 +13,7 @@ module "app_server" {
     module.sg_priv.sec_group_id
   ]
 
-  port_name = "jason-tf-port-${count.index}"
+  port_name = "${var.prefix}${var.port_name}-${count.index}"
 }
 #
 #data "terraform_remote_state" "terraform_output" {

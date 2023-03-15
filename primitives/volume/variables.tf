@@ -4,9 +4,9 @@ variable "db_data_volume_size" {
   description = "number 500 = 500GB"
 }
 
-variable "prefix" {
+variable "volume_name" {
   type = string
-  default = "bell-"
+  default = "volume"
 }
 
 variable "db_count" {

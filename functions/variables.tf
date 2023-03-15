@@ -13,9 +13,38 @@ variable "object_storage_name" {
   default = "tf-test-container"
 }
 
+variable "instance_name" {
+  type    = string
+  default = "tf-instance-app"
+}
+
+variable "bastion_instance_name" {
+  type    = string
+  default = "tf-bastion-instance"
+}
+variable "nat_instance_name" {
+  type = string
+  default = "tf-nat-instance"
+}
+
+variable "port_name" {
+  type    = string
+  default = "tf-port"
+}
+
+variable "keypair_name" {
+  type    = string
+  default = "tf-keypair"
+}
+
 variable "db_count" {
   type = number
   default = 1
+}
+
+variable "volume_name" {
+  type = string
+  default = "tf-volume"
 }
 
 variable "db_data_volume_size" {
@@ -64,4 +93,24 @@ variable "openapi_user_password" {
   description = "openapi_user_password"
   type        = string
   sensitive   = true
+}
+
+variable "public_ip_network_name" {
+  type    = string
+  default = null
+}
+
+variable "sec_group_name_pub" {
+  type    = string
+  default = ""
+}
+
+variable "sec_group_name_priv" {
+  type    = string
+  default = ""
+}
+
+variable "sec_group_name_bastion" {
+  type    = string
+  default = ""
 }

@@ -2,7 +2,7 @@ module "bastion_instance" {
   source        = "../primitives/compute/instance"
 
   count         = 1
-  instance_name = "jason-tf-bastion-instance-${count.index}"
+  instance_name = "${var.prefix}${var.bastion_instance_name}-${count.index}"
   keypair_name  = module.keypair.keypair_name
 
   network_id    = module.vpc.public_network_ids[0]
@@ -13,7 +13,7 @@ module "bastion_instance" {
     module.sg_bastion.sec_group_id
   ]
 
-  port_name = "jason-tf-port-${count.index}"
+  port_name = "${var.prefix}${var.port_name}-${count.index}"
   is_public = true
-  public_ip_network_name = "ext-private-net1"
+  public_ip_network_name = "${var.prefix}${var.public_ip_network_name}"
 }
