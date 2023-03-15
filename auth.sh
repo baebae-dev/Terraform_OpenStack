@@ -1,7 +1,7 @@
 #!/bin/bash
 export openAPI="True"
-export openapi_userid="e170f8eca92b46b58eb7bcc5000803b6"
-export openapi_user_password="{/kvhMX8vFMeTe8gOvOXwhfuKN1yEcPb+oteJBBnxsac=}c9e4e6ce91dabd1b932cba9d08ac3889d516aad8f9477d0bd9f10ede7a320a02"
+export openapi_userid="451bb51cd138412f85ff00ce898e7a9d"
+export openapi_user_password="{/ybCAi/ngsSp7bhiakZ6UqfPHNVy0c6kEg5N7o3SCJQ=}54e3193476a030f828aa152c586ce808062426eb427980812264a70d8d19095f"
 
 export tenant_id="8323ba34b836415a98bc45c8b715dcfc"
 
