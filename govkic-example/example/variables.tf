@@ -44,3 +44,9 @@ variable "auth_url" {
   type        = string
   sensitive   = true
 }
+
+variable "endpoint_override_url" {
+  description = "endpoint_override_url"
+  type        = string
+  sensitive   = true
+}
