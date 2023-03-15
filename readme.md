@@ -35,10 +35,6 @@
  ┃ ┣ 📜volume.tf
  ┃ ┗ 📜vpc.tf
  ┣ 📂primitives
- ┃ ┣ 📂backend
- ┃ ┃ ┣ 📜backend.tf
- ┃ ┃ ┣ 📜variables.tf
- ┃ ┃ ┗ 📜version.tf
  ┃ ┣ 📂compute
  ┃ ┃ ┣ 📂flavor
  ┃ ┃ ┃ ┣ 📜flavor.tf
