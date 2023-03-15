@@ -1,19 +1,32 @@
-instance_count    = 1
-volume_count      = 1
-keypair_name      = "tf-keypair"
-network_name      = "tf-network"
-subnet_name       = "tf-subnet"
-public_subnet_cidrs  = ["192.168.1.0/24"]
-private_subnet_cidrs = ["192.168.10.0/24"]
-router_name          = "tf-router"
-external_network_id = "a48f21af-04fe-4559-8085-a2bb0ae485ca"
-sec_group_name_bastion = "sg-bastion"
-sec_group_name_priv = "sg-priv"
-sec_group_name_pub = "sg-pub"
-image_name         = "Ubuntu18.04.6-Cloud"
+# instance
+instance_count         = 1
+instance_name          = "tf-instance-app"
+bastion_instance_name  = "tf-bastion-instance"
+nat_instance_name      = "tf-nat-instance"
+
+# network
+port_name              = "tf-port"
+network_name           = "tf-network"
+subnet_name            = "tf-subnet"
+router_name            = "tf-router"
 public_ip_network_name = "ext-private-net1"
-block_device_delete_on_termination = false
+
+# volume
+volume_count        = 1
+volume_name         = "tf-volume"
+volume_size         = "500"
+
+# keypair
+keypair_name        = "tf-keypair"
+
+# object_storage
 object_storage_name = "tf-backend-container"
+
+# security-group
+sec_group_name_bastion = "sg-bastion"
+sec_group_name_priv    = "sg-priv"
+sec_group_name_pub     = "sg-pub"
+
+# extra
 prefix = "bell-" # 본인 이름으로 변경하고 사용
-db_count = 1
-env = "test"
+env    = "test"
