@@ -21,6 +21,7 @@
 ## Project Structure
 ```
 📦govcloud-terraform
+ ┣ 📂service
  ┣ 📂functions
  ┃ ┣ 📜backend.tf
  ┃ ┣ 📜bastion-instance.tf
