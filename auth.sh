@@ -83,7 +83,7 @@ fi
 echo "\
 tenant_id = "\""${tenant_id}"\""\n\
 auth_url = "\"""https://cbt-openapi.gov.kakaoicloud.com/api/identity/v3/""\""\n\
-endpoint_override_url = "\"""https://cbt-openapi.gov.kakaoicloud.com/api/""\""\n\
+endpoint_override_url = "\"""https://cbt-openapi.gov.kakaoicloud.com/api""\""\n\
 user_domain_name = ${user_domain_name}\n\
 openapi_user_name = ${openapi_user_name}\n\
 openapi_user_password = "\""${openapi_user_password}"\""\n\
