@@ -1,3 +1,3 @@
-output "public_network_ids" {
-  value = module.all.public_network_ids
-}
+#output "public_network_ids" {
+#  value = module.all.public_network_ids
+#}

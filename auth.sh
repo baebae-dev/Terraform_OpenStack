@@ -56,14 +56,14 @@ if [[ ${Object_storage} == "True" ]]; then
               ],
               "password": {
                   "user": {
-                      "id": "'"${object_storage_userid}"'",
-                      "password": "'"${object_storage_user_password}"'"
+                        "id": "'"${object_storage_userid}"'",
+                        "password": "'"${object_storage_user_password}"'"
                   }
               }
           },
           "scope": {
               "project": {
-                  "id": "'"${tenant_id}"'"
+                    "id": "'"${tenant_id}"'"
               }
           }
       }
@@ -72,8 +72,10 @@ if [[ ${Object_storage} == "True" ]]; then
 echo "=========================================="
 export object_storage_user_name=$(cat result_Object_storage.json | jq '.token.user.name')
 export user_domain_name=$(cat result_Object_storage.json | jq '.token.user.domain.name')
+#export X_Auth_Token=$(cat result_Object_storage_header.json | jq 'X-Subject-Token')
 echo "object_storage_user_name $object_storage_user_name"
 echo "user_domain_name $user_domain_name"
+#echo "X_Auth_Token $X_Auth_Token"
 rm result_Object_storage.json
 echo "=========================================="
 fi

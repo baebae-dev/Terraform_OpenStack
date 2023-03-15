@@ -1,5 +1,5 @@
 module "all" {
-  source = "./functions"
+  source = "./test"
 
   auth_url = var.auth_url
   object_storage_user_name = var.object_storage_user_name
