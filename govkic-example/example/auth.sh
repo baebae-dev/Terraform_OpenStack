@@ -40,6 +40,7 @@ export openapi_user_name=$(cat result_openAPI.json | jq '.token.user.name')
 export user_domain_name=$(cat result_openAPI.json | jq '.token.user.domain.name')
 echo "openapi_user_name $openapi_user_name"
 echo "user_domain_name $user_domain_name"
+rm result_openAPI.json
 echo "=========================================="
 fi
 
@@ -73,6 +74,7 @@ export object_storage_user_name=$(cat result_Object_storage.json | jq '.token.us
 export user_domain_name=$(cat result_Object_storage.json | jq '.token.user.domain.name')
 echo "object_storage_user_name $object_storage_user_name"
 echo "user_domain_name $user_domain_name"
+rm result_Object_storage.json
 echo "=========================================="
 fi
 
