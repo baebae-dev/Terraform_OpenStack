@@ -1,3 +1,0 @@
-module "all" {
-  source = "./functions"
-}
