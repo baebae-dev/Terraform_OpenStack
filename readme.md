@@ -17,7 +17,7 @@
 
 ## Project Structure
 ```
-📦GovKIC
+📦govcloud-terraform
  ┣ 📂functions
  ┃ ┣ 📜backend.tf
  ┃ ┣ 📜bastion-instance.tf
@@ -88,11 +88,14 @@
  ┃ ┃ ┣ 📜variables.tf
  ┃ ┃ ┣ 📜version.tf
  ┃ ┃ ┗ 📜volume.tf
+ ┣ 📜.gitignore
  ┣ 📜auth.sh
  ┣ 📜main.tf
  ┣ 📜outputs.tf
  ┣ 📜provider.tf
+ ┣ 📜readme.md
  ┣ 📜secret.tfvars
+ ┣ 📜terraform.tfstate
  ┣ 📜variables.tf
- ┗ 📜versions.tf   
+ ┗ 📜versions.tf 
 ```
