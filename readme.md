@@ -17,15 +17,83 @@
 
 ## Project Structure
 ```
-govcloud-terraform
-├──  govkic-example
-│   └── example                                     # gov kic 컴포넌트 생성 소스 
-│       ├── image.tf                                     
-│       ├── instance.tf 
-│       ├── network.tf  
-│       ├── provider.tf
-│       ├── required.tf
-│       ├── security-group.tf
-│       └── variables.tf
-             
+📦govkic-example
+ ┗ 📂example
+ ┃ ┣ 📂functions
+ ┃ ┃ ┣ 📜backend.tf
+ ┃ ┃ ┣ 📜bastion-instance.tf
+ ┃ ┃ ┣ 📜instances.tf
+ ┃ ┃ ┣ 📜keypair.tf
+ ┃ ┃ ┣ 📜nat-instance.tf
+ ┃ ┃ ┣ 📜objectStorage.tf
+ ┃ ┃ ┣ 📜outputs.tf
+ ┃ ┃ ┣ 📜security-group.tf
+ ┃ ┃ ┣ 📜variables.tf
+ ┃ ┃ ┣ 📜volume.tf
+ ┃ ┃ ┗ 📜vpc.tf
+ ┃ ┣ 📂primitives
+ ┃ ┃ ┣ 📂backend
+ ┃ ┃ ┃ ┣ 📜backend.tf
+ ┃ ┃ ┃ ┣ 📜variables.tf
+ ┃ ┃ ┃ ┗ 📜version.tf
+ ┃ ┃ ┣ 📂compute
+ ┃ ┃ ┃ ┣ 📂flavor
+ ┃ ┃ ┃ ┃ ┣ 📜flavor.tf
+ ┃ ┃ ┃ ┃ ┗ 📜output.tf
+ ┃ ┃ ┃ ┣ 📂image
+ ┃ ┃ ┃ ┃ ┣ 📜image.tf
+ ┃ ┃ ┃ ┃ ┣ 📜output.tf
+ ┃ ┃ ┃ ┃ ┗ 📜variable.tf
+ ┃ ┃ ┃ ┣ 📂instance
+ ┃ ┃ ┃ ┃ ┣ 📜data.tf
+ ┃ ┃ ┃ ┃ ┣ 📜instance.tf
+ ┃ ┃ ┃ ┃ ┣ 📜output.tf
+ ┃ ┃ ┃ ┃ ┣ 📜variable.tf
+ ┃ ┃ ┃ ┃ ┗ 📜versions.tf
+ ┃ ┃ ┃ ┗ 📂keypair
+ ┃ ┃ ┃ ┃ ┣ 📜keypair.tf
+ ┃ ┃ ┃ ┃ ┣ 📜output.tf
+ ┃ ┃ ┃ ┃ ┣ 📜variable.tf
+ ┃ ┃ ┃ ┃ ┗ 📜versions.tf
+ ┃ ┃ ┣ 📂network
+ ┃ ┃ ┃ ┣ 📂router
+ ┃ ┃ ┃ ┃ ┣ 📂ext
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜output.tf
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜router.tf
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜variable.tf
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜versions.tf
+ ┃ ┃ ┃ ┃ ┣ 📂in
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜output.tf
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜router.tf
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜variable.tf
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜versions.tf
+ ┃ ┃ ┃ ┃ ┗ 📂route
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜route.tf
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜variable.tf
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜versions.tf
+ ┃ ┃ ┃ ┣ 📂security-group
+ ┃ ┃ ┃ ┃ ┣ 📜output.tf
+ ┃ ┃ ┃ ┃ ┣ 📜security-group.tf
+ ┃ ┃ ┃ ┃ ┣ 📜variable.tf
+ ┃ ┃ ┃ ┃ ┗ 📜versions.tf
+ ┃ ┃ ┃ ┗ 📂vpc
+ ┃ ┃ ┃ ┃ ┣ 📜network.tf
+ ┃ ┃ ┃ ┃ ┣ 📜output.tf
+ ┃ ┃ ┃ ┃ ┣ 📜variable.tf
+ ┃ ┃ ┃ ┃ ┗ 📜versions.tf
+ ┃ ┃ ┣ 📂objectStorage
+ ┃ ┃ ┃ ┣ 📜objectStorage.tf
+ ┃ ┃ ┃ ┣ 📜variables.tf
+ ┃ ┃ ┃ ┗ 📜version.tf
+ ┃ ┃ ┗ 📂volume
+ ┃ ┃ ┃ ┣ 📜variables.tf
+ ┃ ┃ ┃ ┣ 📜version.tf
+ ┃ ┃ ┃ ┗ 📜volume.tf
+ ┃ ┣ 📜auth.sh
+ ┃ ┣ 📜main.tf
+ ┃ ┣ 📜outputs.tf
+ ┃ ┣ 📜provider.tf
+ ┃ ┣ 📜secret.tfvars
+ ┃ ┣ 📜variables.tf
+ ┃ ┗ 📜versions.tf      
 ```
