@@ -60,3 +60,8 @@ variable "endpoint_override_url" {
   type        = string
   sensitive   = true
 }
+
+variable "objectStorage_name" {
+  type = string
+  default = ""
+}
