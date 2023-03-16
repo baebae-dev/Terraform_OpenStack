@@ -10,4 +10,5 @@ module "backend_test" {
   openapi_user_password = var.object_storage_user_password
   tenant_id = var.tenant_id
   user_domain_name = var.user_domain_name
+  endpoint_override_url = var.endpoint_override_url
 }
