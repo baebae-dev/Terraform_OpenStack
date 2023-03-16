@@ -1,8 +1,13 @@
-module "backend_test" {
-  source = "./remote_state_test"
 
-  backend_address = var.backend_address
-  remote_state_name = var.remote_state_name
+// module "backend_test" {
+//   source = "./remote_state_test"
+
+//   backend_address = var.backend_address
+//   remote_state_name = var.remote_state_name
+
+module "all" {
+  source = "./functions"
+
 
   auth_url = var.auth_url
   object_storage_user_name = var.object_storage_user_name
