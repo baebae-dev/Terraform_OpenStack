@@ -21,6 +21,16 @@ variable "object_storage_user_name" {
   sensitive   = true
 }
 
+variable "object_storage_name" {
+  type    = string
+  default = "tf-test-container"
+}
+
+variable "backend_address" {
+  type    = string
+  default = ""
+}
+
 variable "object_storage_user_password" {
   description = "openapi_user_password"
   type        = string

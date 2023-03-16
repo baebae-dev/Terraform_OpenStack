@@ -1,10 +1,12 @@
 data "terraform_remote_state" "remote" {
   backend = "http"
   config = {
-    address = "https://gov-cbt-objectstorage.kakaoicloud.in/v1/8323ba34b836415a98bc45c8b715dcfc/tf-test-container"
+    address = var.backend_address
   }
 }
 
+# test 용
+# remote state에 기록된 생성된 object storage에 object 업로드
 resource "openstack_objectstorage_object_v1" "tfstate_test" {
   region         = "RegionOne"
   container_name = data.terraform_remote_state.remote.outputs.id

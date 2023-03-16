@@ -1,5 +1,7 @@
-module "all" {
+module "backend_test" {
   source = "./test"
+
+  backend_address = var.backend_address
 
   auth_url = var.auth_url
   object_storage_user_name = var.object_storage_user_name

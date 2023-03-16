@@ -1,3 +1,7 @@
+variable "backend_address" {
+  type = string
+  default = ""
+}
 
 variable "openapi_user_name" {
   description = "openapi_user_name"
