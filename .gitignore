@@ -3,6 +3,5 @@
 **/.terraform.*
 **/*.tfstate
 **/*.tfstate.*
-test/
 .DS_Store
 govcloud-terraform.iml

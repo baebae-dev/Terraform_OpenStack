@@ -1,6 +1,6 @@
 variable "prefix" {
   type = string
-  default = null
+  default = ""
 }
 
 variable "router_name" {
@@ -21,6 +21,11 @@ variable "network_name" {
 variable "object_storage_name" {
   type    = string
   default = "tf-test-container"
+}
+
+variable "backend_address" {
+  type    = string
+  default = ""
 }
 
 variable "instance_name" {
@@ -129,4 +134,15 @@ variable "openapi_user_password" {
   description = "openapi_user_password"
   type        = string
   sensitive   = true
+}
+
+variable "endpoint_override_url" {
+  description = "endpoint_override_url"
+  type        = string
+  sensitive   = true
+}
+
+variable "objectStorage_name" {
+  type = string
+  default = ""
 }

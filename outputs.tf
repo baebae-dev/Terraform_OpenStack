@@ -1,3 +1,3 @@
-#output "public_network_ids" {
-#  value = module.all.public_network_ids
-#}
+output "objectStorage" {
+  value = module.backend_test.objectStorage
+}

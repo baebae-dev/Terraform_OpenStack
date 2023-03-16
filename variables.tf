@@ -21,6 +21,21 @@ variable "object_storage_user_name" {
   sensitive   = true
 }
 
+variable "object_storage_name" {
+  type    = string
+  default = "tf-test-container"
+}
+
+variable "backend_address" {
+  type    = string
+  default = ""
+}
+
+variable "remote_state_name" {
+  type    = string
+  default = ""
+}
+
 variable "object_storage_user_password" {
   description = "openapi_user_password"
   type        = string
@@ -49,4 +64,9 @@ variable "endpoint_override_url" {
   description = "endpoint_override_url"
   type        = string
   sensitive   = true
+}
+
+variable "objectStorage_name" {
+  type = string
+  default = ""
 }
