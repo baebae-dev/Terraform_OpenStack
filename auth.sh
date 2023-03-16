@@ -6,8 +6,8 @@ export openapi_user_password="{/ybCAi/ngsSp7bhiakZ6UqfPHNVy0c6kEg5N7o3SCJQ=}54e3
 export tenant_id="8323ba34b836415a98bc45c8b715dcfc"
 
 export Object_storage="True"
-export object_storage_userid="86c113235b22469cbdf4e48ec2709348"
-export object_storage_user_password="{bKTujW0ULDg1AwJTDgS4Ukjm0mbw8vRrNvf/PZ1iJ/s=}8366d9918231eda38cb9699b8f9d942153b6209489a1bec3ac13a5042d0ada2c"
+export object_storage_userid="ea23b046595d494e8b3e34c2dfa2b06c"
+export object_storage_user_password="{3RlCtdTtwybGDRIjcVhiu97Xtu23OZGSVwDAp38kTfY=}7f9323e3df864982c1ab129ed97d4b599f5f059b6cb3031533fbd64559215ab2"
 
 
 if [[ ${openAPI} == "True" ]]; then
@@ -68,15 +68,40 @@ if [[ ${Object_storage} == "True" ]]; then
           }
       }
   }' | jq > result_Object_storage.json
+  curl -i --location 'https://gov-cbt-keystone.kakaoicloud.in/v3/auth/tokens' \
+  --header 'Content-Type: application/json' \
+  --data '{
+      "auth": {
+          "identity": {
+              "methods": [
+                  "password"
+              ],
+              "password": {
+                  "user": {
+                        "id": "'"${object_storage_userid}"'",
+                        "password": "'"${object_storage_user_password}"'"
+                  }
+              }
+          },
+          "scope": {
+              "project": {
+                    "id": "'"${tenant_id}"'"
+              }
+          }
+      }
+  }'  > result_Object_storage_header.txt
 
 echo "=========================================="
 export object_storage_user_name=$(cat result_Object_storage.json | jq '.token.user.name')
-export user_domain_name=$(cat result_Object_storage.json | jq '.token.user.domain.name')
-#export X_Auth_Token=$(cat result_Object_storage_header.json | jq 'X-Subject-Token')
 echo "object_storage_user_name $object_storage_user_name"
-echo "user_domain_name $user_domain_name"
-#echo "X_Auth_Token $X_Auth_Token"
+if [[ -z ${user_domain_name}  ]]; then
+  export user_domain_name=$(cat result_Object_storage.json | jq '.token.user.domain.name')
+  echo "user_domain_name $user_domain_name"
+fi
+export X_Auth_Token=awk '/X-Subject-Token/' result_Object_storage_header.txt
+echo "X_Auth_Token $X_Auth_Token"
 rm result_Object_storage.json
+rm result_Object_storage_header.txt
 echo "=========================================="
 fi
 
