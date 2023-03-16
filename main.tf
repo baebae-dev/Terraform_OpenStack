@@ -1,5 +1,5 @@
 module "backend_test" {
-  source = "./test"
+  source = "./remote_state_test"
 
   backend_address = var.backend_address
 
