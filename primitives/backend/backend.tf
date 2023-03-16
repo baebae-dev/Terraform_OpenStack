@@ -9,7 +9,6 @@ resource "openstack_objectstorage_object_v1" "tfstate_test" {
   region         = "RegionOne"
   container_name = data.terraform_remote_state.remote.outputs.id
   name           = "env.sh"
-
   source       = "./env.sh"
 
   provider = openstack.object-storage
