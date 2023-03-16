@@ -1,6 +1,21 @@
-variable "public_network_ids" {
-  type    = list(string)
-  default = []
+variable "env" {
+  type    = string
+  default = ""
+}
+
+variable "remote_state_name" {
+  type    = string
+  default = ""
+}
+
+variable "objectStorage_name" {
+  type    = string
+  default = ""
+}
+
+variable "prefix" {
+  type    = string
+  default = ""
 }
 
 variable "openapi_user_name" {
@@ -19,21 +34,6 @@ variable "object_storage_user_name" {
   description = "openapi_user_name"
   type        = string
   sensitive   = true
-}
-
-variable "object_storage_name" {
-  type    = string
-  default = "tf-test-container"
-}
-
-variable "backend_address" {
-  type    = string
-  default = ""
-}
-
-variable "remote_state_name" {
-  type    = string
-  default = ""
 }
 
 variable "object_storage_user_password" {
@@ -58,15 +58,4 @@ variable "auth_url" {
   description = "auth_url"
   type        = string
   sensitive   = true
-}
-
-variable "endpoint_override_url" {
-  description = "endpoint_override_url"
-  type        = string
-  sensitive   = true
-}
-
-variable "objectStorage_name" {
-  type = string
-  default = ""
 }
