@@ -1,9 +1,0 @@
-export openAPI="True"
-export openapi_userid="451bb51cd138412f85ff00ce898e7a9d"
-export openapi_user_password="{/ybCAi/ngsSp7bhiakZ6UqfPHNVy0c6kEg5N7o3SCJQ=}54e3193476a030f828aa152c586ce808062426eb427980812264a70d8d19095f"
-
-export tenant_id="8323ba34b836415a98bc45c8b715dcfc"
-
-export Object_storage="True"
-export object_storage_userid="ea23b046595d494e8b3e34c2dfa2b06c"
-export object_storage_user_password="{3RlCtdTtwybGDRIjcVhiu97Xtu23OZGSVwDAp38kTfY=}7f9323e3df864982c1ab129ed97d4b599f5f059b6cb3031533fbd64559215ab2"
