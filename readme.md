@@ -24,7 +24,7 @@
 > backend.sh에 변수 "object_storage_url"에 생성한 remote container 접근 url 작성   
 > ``sh backend.sh`` 로 terraform.state 파일 remote container에 업로드   
 - state file 사용   
-> remote_state_test/backend_use.tf 참고   
+> [remote_state_test/backend_use.tf](https://cbt-gitlab.gov.kakaoicloud.com/bell.coco/govcloud-terraform/-/blob/master/remote_state_test/backend_use.tf) 참고   
 > 기존 리소스 중 사용할 리소스는 반드시 output 파일에 명시하여야 사용가능    
 > output에 명시된 리소스를 사용하여 원하는 작업 진행   
 > ``data "terraform_remote_state"``로 remote state file 가져와서 작업함.
@@ -34,7 +34,6 @@
 📦govcloud-terraform
  ┣ 📂service
  ┣ 📂functions
- ┃ ┣ 📜backend.tf
  ┃ ┣ 📜bastion-instance.tf
  ┃ ┣ 📜instances.tf
  ┃ ┣ 📜keypair.tf
@@ -99,8 +98,15 @@
  ┃ ┃ ┣ 📜variables.tf
  ┃ ┃ ┣ 📜version.tf
  ┃ ┃ ┗ 📜volume.tf
+ ┣ 📂remote_state_test      # remote_state 작업
+ ┃ ┣ 📜backend_use.tf
+ ┃ ┣ 📜objectStorage.tf
+ ┃ ┣ 📜outputs.tf
+ ┃ ┣ 📜terraform.tf
+ ┃ ┗ 📜variables.tf
  ┣ 📜.gitignore
- ┣ 📜auth.sh
+ ┣ 📜auth.sh          # openAPI 사용 인증
+ ┣ 📜backend.sh       # state file -> remote container 업로드
  ┣ 📜main.tf
  ┣ 📜outputs.tf
  ┣ 📜provider.tf
