@@ -23,8 +23,8 @@ keypair_name        = "tf-keypair"
 object_storage_name = "tf-backend-container"
 
 # backend
-remote_state_name = "tf-test-container"
-backend_address = "https://gov-cbt-objectstorage.kakaoicloud.in/v1/8323ba34b836415a98bc45c8b715dcfc/tf-test-container/terraform.tfstate"
+remote_state_name = "remote-state"
+backend_address = "https://gov-cbt-objectstorage.kakaoicloud.in/v1/8323ba34b836415a98bc45c8b715dcfc/remote-state/terraform.tfstate"
 
 # security-group
 sec_group_name_bastion = "sg-bastion"

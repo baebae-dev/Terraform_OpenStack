@@ -2,7 +2,7 @@
 module "objectStorage" {
   source        = "../primitives/objectStorage"
 
-  object_storage_name = "test"
+  object_storage_name = "test" # var.object_storage_name
   tenant_id = var.tenant_id
   user_domain_name = var.user_domain_name
   openapi_user_password = var.openapi_user_password

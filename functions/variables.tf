@@ -83,6 +83,10 @@ variable "sec_group_name_bastion" {
   default = ""
 }
 
+variable "remote_state_name" {
+  type    = string
+  default = ""
+}
 
 ##### auth #####
 variable "tenant_id" {
