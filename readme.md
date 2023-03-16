@@ -17,6 +17,17 @@
   ``terraform apply -var-file="secret.tfvars"``
 - 리소스 삭제    
   ``terraform destroy -var-file="secret.tfvars"``
+3. remote state
+- state file 업로드
+> terraform 생성 작업 완료 후    
+> remote container 없을 경우 먼저 생성 (있는 경우 스킵)
+> backend.sh에 변수 "object_storage_url"에 생성한 remote container 접근 url 작성   
+> ``sh backend.sh`` 로 terraform.state 파일 remote container에 업로드   
+- state file 사용   
+> remote_state_test/backend_use.tf 참고   
+> 기존 리소스 중 사용할 리소스는 반드시 output 파일에 명시하여야 사용가능    
+> output에 명시된 리소스를 사용하여 원하는 작업 진행   
+> ``data "terraform_remote_state"``로 remote state file 가져와서 작업함.
 
 ## Project Structure
 ```
