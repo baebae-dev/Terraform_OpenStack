@@ -17,7 +17,7 @@
   ``terraform apply -var-file="secret.tfvars"``
 - 리소스 삭제    
   ``terraform destroy -var-file="secret.tfvars"``
-3. remote state
+### remote state 사용
 - state file 업로드
 > terraform 생성 작업 완료 후    
 > remote container 없을 경우 먼저 생성 (있는 경우 스킵)
