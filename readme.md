@@ -7,7 +7,7 @@
 > secret.tfvars 파일 자동 생성   
 2. prefix 수정
 > 생성되는 컴포넌트 명 중복 충돌을 막고자
-> [terraform.tfvars](https://cbt-gitlab.gov.kakaoicloud.com/bell.coco/govcloud-terraform/-/blob/master/terraform.tfvars#L31)의 prefix 변수값 본인 이름으로 수정 후 사용    
+> [terraform.tfvars](https://cbt-gitlab.gov.kakaoicloud.com/bell.coco/govcloud-terraform/-/blob/master/terraform.tfvars#L35)의 prefix 변수값 본인 이름으로 수정 후 사용    
 ### terraform 실행
 - 설정 파일에 모듈 등록   
   ``terraform init ``
