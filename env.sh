@@ -3,8 +3,8 @@ export tenant_id="8323ba34b836415a98bc45c8b715dcfc"
 
 # openAPI argument
 export openAPI="True"
-export openapi_userid="451bb51cd138412f85ff00ce898e7a9d"
-export openapi_user_password="{/ybCAi/ngsSp7bhiakZ6UqfPHNVy0c6kEg5N7o3SCJQ=}54e3193476a030f828aa152c586ce808062426eb427980812264a70d8d19095f"
+export openapi_userid="6d4c10382cf0426894df0ded09bb02ff"
+export openapi_user_password="{SdvJIEUNmWh7fXhQTJktODHriG3ocWIatIVTo0Q9z7s=}b40a44ffde158103b15b167b4e0f4e36614720ace3d05efde6bc79442d28cba2"
 
 # Object_storage argument
 export Object_storage="True"
