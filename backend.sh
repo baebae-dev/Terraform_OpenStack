@@ -36,12 +36,13 @@ if [[ ${get_X_Auth_Token} == "True" ]]; then
   rm result_Object_storage_header.txt
 else
   echo ""
-#  export X_Auth_Token="gAAAAABkGVzcLzyRCjrSOY_b6CZ2Qh6xq2J2OZUf7xHwveat3SBHieS85B9lUPOqIUzo7jxa-B9jgHBAQKxxOsNAwl6jYC2r7Mn7E25RHcsSnqwQd0K3FVvS1TMu6eOdYYA779ILOh1jCfr4JrWJ98odSDoOB2KqIEBf_Qzx2uZyBqSmV19XB50"
+#  export X_Auth_Token="gAAAAABkGWXyXHl1IsG8rNTyk4HhOG0099AUUOAbQyAy_5_HCNW4ldJzIB3Qbp-LHDopNFNgOYiWpupTg2ONaSdmRWKasF_fTNr0W7mBsTj0gsUpsDu5Er1gtiH39onnOGlbwXi5gATwhq46TPfDd4EpyeV1qypGifXNnkMQBGnyioUeSDqAn0o"
 fi
 
 export remote_state_filenm="terraform-test.tfstate"
 export object_storage_url="https://gov-cbt-objectstorage.kakaoicloud.in/v1/8323ba34b836415a98bc45c8b715dcfc/remote-state/${remote_state_filenm}"
 
 # backend 파일 전송
-echo "curl -i ${object_storage_url} -X PUT -d "@terraform.tfstate" -H 'X-Auth-Token: ${X_Auth_Token}'"
-curl -i ${object_storage_url} -X PUT -d "@terraform.tfstate"  -H "X-Auth-Token: ${X_Auth_Token}"
+echo "curl -i ${object_storage_url} -X PUT -d "@terraform.tfstate" -H \"X-Auth-Token: ${X_Auth_Token}\""
+sleep 5
+curl -i ${object_storage_url} -X PUT -d "@terraform.tfstate" -H "X-Auth-Token: ${X_Auth_Token}"

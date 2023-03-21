@@ -67,6 +67,7 @@ if [[ -z ${user_domain_name}  ]]; then
   export user_domain_name=$(cat result_Object_storage.json | jq '.token.user.domain.name')
   echo "user_domain_name $user_domain_name"
 fi
+rm result_Object_storage.json
 echo "=========================================="
 fi
 
