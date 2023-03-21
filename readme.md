@@ -99,12 +99,13 @@
  ┃ ┃ ┣ 📜version.tf
  ┃ ┃ ┗ 📜volume.tf
  ┣ 📂remote_state_test      # remote_state 작업
- ┃ ┣ 📜backend_use.tf
+ ┃ ┣ 📜backend_use.tf       # remtoe state 파일 불러와 사용 예시 
  ┃ ┣ 📜objectStorage.tf
  ┃ ┣ 📜outputs.tf
  ┃ ┣ 📜terraform.tf
  ┃ ┗ 📜variables.tf
  ┣ 📜.gitignore
+ ┣ 📜env.sh           # openAPI 인증 관련 계정값 
  ┣ 📜auth.sh          # openAPI 사용 인증
  ┣ 📜backend.sh       # state file -> remote container 업로드
  ┣ 📜main.tf
