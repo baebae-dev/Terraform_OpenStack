@@ -3,7 +3,7 @@
 ################################################################################
 
 resource "openstack_networking_router_v2" "router_external" {
-  name                = "ext-${var.router_name}"
+  name                = "${var.router_name}-ext"
   region              = var.region_name
   admin_state_up      = var.admin_state_up
   external_network_id = var.external_network_id
@@ -54,9 +54,9 @@ resource "openstack_networking_router_route_v2" "router_route" {
   destination_cidr  = var.destination_cidrs[count.index]
   next_hop          = var.next_hops[count.index]
 
-#  depends_on = [
-#    openstack_networking_router_v2.router_external,
-#    openstack_networking_router_interface_v2.router_interface,
-#    openstack_networking_port_v2.port
-#  ]
+  depends_on = [
+    openstack_networking_router_v2.router_external,
+    openstack_networking_router_interface_v2.router_interface,
+    openstack_networking_port_v2.port
+  ]
 }

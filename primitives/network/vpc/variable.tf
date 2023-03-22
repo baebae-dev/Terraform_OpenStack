@@ -58,6 +58,16 @@ variable "enable_nat_instance" {
   default = false
 }
 
+variable "router_name" {
+  type    = string
+  default = ""
+}
+
+variable "external_network_id" {
+  type    = string
+  default = ""
+}
+
 #variable "tags" {
 #  type    = object({
 #    Name  = optional(string),

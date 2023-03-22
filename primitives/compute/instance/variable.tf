@@ -77,3 +77,8 @@ variable "port_security_enabled" {
   type    = bool
   default = true
 }
+
+variable "create_keypair" {
+  type    = bool
+  default = false
+}

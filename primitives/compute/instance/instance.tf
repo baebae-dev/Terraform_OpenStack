@@ -1,4 +1,14 @@
 ################################################################################
+# Keypair
+################################################################################
+
+module "keypair" {
+  source = "../keypair"
+  count  = var.create_keypair
+  keypair_name   = var.keypair_name
+}
+
+################################################################################
 # Instance
 ################################################################################
 
@@ -7,7 +17,7 @@ resource "openstack_compute_instance_v2" "instance" {
   region          = var.region_name
   image_id        = data.openstack_images_image_v2.image.id
   flavor_id        = data.openstack_compute_flavor_v2.flavor.id
-  key_pair        = var.keypair_name
+  key_pair        = module.keypair.keypair_name
 
 #  block_device {
 #    uuid                  = data.openstack_images_image_v2.image.id
