@@ -1,3 +1,3 @@
-output "objectStorage" {
-  value = module.backend_test.objectStorage
-}
+#output "objectStorage" {
+#  value = module.backend_test.objectStorage
+#}
