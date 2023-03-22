@@ -3,8 +3,8 @@ module "vpc" {
   network_name         = "${var.prefix}${var.network_name}"
   subnet_name          = "${var.prefix}${var.subnet_name}"
 
-  public_subnet_cidrs  = ["192.168.1.0/24"]
-  private_subnet_cidrs = ["192.168.10.0/24"]
+  public_subnet_cidrs  = var.public_subnet_cidrs
+  private_subnet_cidrs = var.private_subnet_cidrs
 }
 
 module "external_router" {

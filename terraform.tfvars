@@ -10,6 +10,12 @@ network_name           = "tf-network"
 subnet_name            = "tf-subnet"
 router_name            = "tf-router"
 public_ip_network_name = "ext-private-net1"
+public_subnet_cidrs    = ["192.168.2.0/24"]
+private_subnet_cidrs   = ["192.168.12.0/24"]
+routing_table_ext_next_hops = ["192.168.0.254"]
+# 아래 두개는 같아야.
+nat_instance_ip        = "192.168.0.59"
+routing_table_in_next_hops = ["192.168.0.59"]
 
 # volume
 volume_count        = 1
