@@ -31,17 +31,17 @@ variable "private_subnet_cidrs" {
 ## nat_instance_ip과 routing_table_in_next_hops는 같아야함.
 variable "nat_instance_ip" {
   type = string
-  default = "192.168.10.0/24"
+  default = "192.168.0.59"
 }
 
 variable "routing_table_in_next_hops" {
   type = list(string)
-  default = ["192.168.10.0/24"]
+  default = ["192.168.0.59"]
 }
 
 variable "routing_table_ext_next_hops" {
   type = list(string)
-  default = ["192.168.1.1"]
+  default = ["192.168.0.254"]
 }
 
 variable "object_storage_name" {
@@ -97,11 +97,6 @@ variable "volume_size" {
   type = number
   default = 500
   description = "number 500 = 500GB"
-}
-
-variable "public_ip_network_name" {
-  type    = string
-  default = null
 }
 
 variable "sec_group_name_pub" {
