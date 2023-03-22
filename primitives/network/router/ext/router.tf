@@ -3,7 +3,7 @@
 ################################################################################
 
 resource "openstack_networking_router_v2" "router_external" {
-  name                = "ext-${var.router_name}"
+  name                = "${var.router_name}"
   region              = var.region_name
   admin_state_up      = var.admin_state_up
   external_network_id = var.external_network_id

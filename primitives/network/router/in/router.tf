@@ -3,7 +3,7 @@
 ################################################################################
 
 resource "openstack_networking_router_v2" "router_internal" {
-  name                = "in-${var.router_name}"
+  name                = "${var.router_name}"
   region              = var.region_name
   admin_state_up      = var.admin_state_up
 }
