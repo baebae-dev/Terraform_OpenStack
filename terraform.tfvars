@@ -10,8 +10,8 @@ network_name           = "tf-network"
 subnet_name            = "tf-subnet"
 router_name            = "tf-router"
 public_ip_network_name = "ext-private-net1"
-public_subnet_cidrs    = ["192.168.2.0/24"]
-private_subnet_cidrs   = ["192.168.12.0/24"]
+public_subnet_cidrs    = ["192.168.1.0/24"]
+private_subnet_cidrs   = ["192.168.10.0/24"]
 routing_table_ext_next_hops = ["192.168.0.254"]
 # 아래 두개는 같아야.
 nat_instance_ip        = "192.168.0.59"
@@ -29,7 +29,7 @@ keypair_name        = "tf-keypair"
 object_storage_name = "tf-backend-container"
 
 # backend
-remote_state_name = "remote-test" #"remote-state"
+remote_state_name = "remote-state"
 backend_address = "https://gov-cbt-objectstorage.kakaoicloud.in/v1/8323ba34b836415a98bc45c8b715dcfc/remote-state/terraform.tfstate"
 
 # security-group
