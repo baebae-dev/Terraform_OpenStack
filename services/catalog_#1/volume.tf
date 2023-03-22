@@ -1,9 +1,9 @@
 # volume
 module "volume" {
-  source        = "../primitives/volume"
+  source        = "../../primitives/volume"
 
   volume_name = "${var.prefix}${var.volume_name}"
-  volume_count         = var.volume_count
+  volume_count = var.volume_count
   volume_size = var.volume_size
 }
 
@@ -12,6 +12,6 @@ module "volume" {
 #resource "openstack_compute_volume_attach_v2" "volume_attach" {
 #  count = var.volume_count
 #  volume_id = module.volume.volume_id
-#  instance_id = module.app_server.instance.id
+#  instance_id = module.pub_instance.instance_id
 #  device = var.volume_path
 #}

@@ -1,21 +1,21 @@
 variable "prefix" {
   type = string
-  default = ""
+  default = "bell-"
 }
 
 variable "router_name" {
   type    = string
-  default = ""
+  default = "tf-router"
 }
 
 variable "subnet_name" {
   type    = string
-  default = ""
+  default = "tf-subnet"
 }
 
 variable "network_name" {
   type    = string
-  default = ""
+  default = "tf-network"
 }
 
 variable "public_subnet_cidrs" {
@@ -31,17 +31,17 @@ variable "private_subnet_cidrs" {
 ## nat_instance_ip과 routing_table_in_next_hops는 같아야함.
 variable "nat_instance_ip" {
   type = string
-  default = "192.168.10.0/24"
+  default = "192.168.0.59"
 }
 
 variable "routing_table_in_next_hops" {
   type = list(string)
-  default = ["192.168.10.0/24"]
+  default = ["192.168.0.59"]
 }
 
 variable "routing_table_ext_next_hops" {
   type = list(string)
-  default = ["192.168.1.1"]
+  default = ["192.168.0.254"]
 }
 
 variable "object_storage_name" {
@@ -49,9 +49,14 @@ variable "object_storage_name" {
   default = "tf-test-container"
 }
 
-variable "instance_name" {
+variable "priv_instance_name" {
   type    = string
-  default = "tf-instance-app"
+  default = "priv-vm"
+}
+
+variable "pub_instance_name" {
+  type    = string
+  default = "pub-vm"
 }
 
 variable "bastion_instance_name" {
@@ -94,29 +99,24 @@ variable "volume_size" {
   description = "number 500 = 500GB"
 }
 
-variable "public_ip_network_name" {
-  type    = string
-  default = null
-}
-
 variable "sec_group_name_pub" {
   type    = string
-  default = ""
+  default = "sg-pub"
 }
 
 variable "sec_group_name_priv" {
   type    = string
-  default = ""
+  default = "sg-priv"
 }
 
 variable "sec_group_name_bastion" {
   type    = string
-  default = ""
+  default = "sg-bastion"
 }
 
 variable "remote_state_name" {
   type    = string
-  default = ""
+  default = "remote-state"
 }
 
 ##### auth #####

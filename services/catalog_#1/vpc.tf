@@ -1,5 +1,5 @@
 module "vpc" {
-  source               = "../primitives/network/vpc"
+  source               = "../../primitives/network/vpc"
   network_name         = "${var.prefix}${var.network_name}"
   subnet_name          = "${var.prefix}${var.subnet_name}"
 
@@ -8,7 +8,7 @@ module "vpc" {
 }
 
 module "external_router" {
-  source              = "../primitives/network/router/ext"
+  source              = "../../primitives/network/router/ext"
   router_name         = "${var.prefix}${var.router_name}-ext"
   external_network_id = "a48f21af-04fe-4559-8085-a2bb0ae485ca"
 
@@ -19,7 +19,7 @@ module "external_router" {
 }
 
 module "internal_router" {
-  source              = "../primitives/network/router/in"
+  source              = "../../primitives/network/router/in"
   router_name         = "${var.prefix}${var.router_name}-in"
 
   network_ids_a       = module.vpc.public_network_ids
