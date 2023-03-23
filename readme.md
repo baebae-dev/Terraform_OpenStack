@@ -20,7 +20,7 @@
   ``terraform plan -var-file="secret.tfvars"``
 - 리소스 생성    
   ``terraform apply -var-file="secret.tfvars"``
-- 상태파일 저장
+- 상태파일 저장   
   ``sh backend.sh``
 > 준비 3. 과정 진행 후 실행   
 - 리소스 삭제    
