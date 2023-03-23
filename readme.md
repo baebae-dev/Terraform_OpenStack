@@ -17,6 +17,16 @@
   ``terraform apply -var-file="secret.tfvars"``
 - 리소스 삭제    
   ``terraform destroy -var-file="secret.tfvars"``
+### terragrunt 를 통한 리소스 생성
+- terragrunt 설치 (이미 설치된 경우 skip)  
+``brew install terragrunt``
+- 설정 파일에 모듈 등록     
+  ``terraform init ``
+- 리소스 생성 확인   
+``terragrunt apply``
+- 리소스 생성 삭제   
+  ``terragrunt destroy``
+
 ### remote state 사용
 >**[remote_state branch의 "remote_state_test"](https://cbt-gitlab.gov.kakaoicloud.com/bell.coco/govcloud-terraform/-/tree/remote_state/remote_state_test) 폴더 참고**   
 > [wiki 협업 상태파일 관리 [실전적용] 가이드](https://wiki.daumkakao.com/pages/viewpage.action?pageId=1110506073) 참고
