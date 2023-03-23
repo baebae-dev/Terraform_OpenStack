@@ -17,20 +17,3 @@ terraform {
     execute      = ["echo", "Upload Terraform state file to remote container"]
   }
 }
-
-#generate "versions" {
-#  path = "versions.tf"
-#  if_exists = "overwrite_terragrunt"
-#  contents = <<EOF
-#terraform {
-#  required_version = ">= 1.0.0"
-#
-#  required_providers {
-#    openstack = {
-#      source  = "terraform-provider-openstack/openstack"
-#      version = "~> 1.49.0"
-#    }
-#  }
-#}
-#EOF
-#}
