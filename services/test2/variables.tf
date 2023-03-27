@@ -3,6 +3,36 @@ variable "prefix" {
   default = ""
 }
 
+variable "port_name" {
+  type    = string
+  default = ""
+}
+
+variable "network_name" {
+  type = string
+  default = ""
+}
+
+variable "subnet_name" {
+  type = string
+  default = ""
+}
+
+variable "router_name" {
+  type = string
+  default = ""
+}
+
+variable "public_subnet_cidrs" {
+  type    = list(string)
+  default = []
+}
+
+variable "private_subnet_cidrs" {
+  type    = list(string)
+  default = []
+}
+
 variable "public_network_ids" {
   type    = list(string)
   default = []
@@ -115,54 +145,4 @@ variable "endpoint_override_url" {
 variable "objectStorage_name" {
   type = string
   default = ""
-}
-
-variable "public_subnet_cidrs" {
-  type    = list(string)
-  default = []
-}
-
-variable "private_subnet_cidrs" {
-  type    = list(string)
-  default = []
-}
-
-variable "network_name" {
-  type    = string
-  default = ""
-}
-
-variable "subnet_name" {
-  type    = string
-  default = "default-subnet"
-}
-
-variable "region_name" {
-  type    = string
-  default = ""
-}
-
-variable "admin_state_up" {
-  type    = bool
-  default = true
-}
-
-variable "external" {
-  type    = bool
-  default = false
-}
-
-variable "ip_version" {
-  type    = string
-  default = 4
-}
-
-variable "enable_dhcp" {
-  type    = bool
-  default = true
-}
-
-variable "dns_nameservers" {
-  type    = list(string)
-  default = ["8.8.8.8"]
 }
