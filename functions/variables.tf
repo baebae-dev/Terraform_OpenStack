@@ -83,6 +83,16 @@ variable "volume_path" {
   default = "/dev/vdb"
 }
 
+variable "instance_count" {
+  type    = number
+  default = 1
+}
+
+variable "instance_id" {
+  type = string
+  default = ""
+}
+
 variable "volume_name" {
   type = string
   default = "tf-volume"
