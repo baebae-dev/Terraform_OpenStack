@@ -1,7 +1,7 @@
 module "app_server" {
   source        = "../primitives/compute/instance"
 
-  count         = 3
+  count         = var.instance_count
   instance_name = "${var.prefix}${var.instance_name}-${count.index}"
   keypair_name  = module.keypair.keypair_name
 
