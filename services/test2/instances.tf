@@ -3,7 +3,7 @@ module "app_server" {
 
   count         = 3
   instance_name = "${var.prefix}${var.instance_name}-${count.index}"
-#  keypair_name  = module.keypair.keypair_name
+  keypair_name  = module.keypair.keypair_name
 
   network_id    = module.vpc.private_network_ids[0]
   subnet_id     = module.vpc.private_subnet_ids[0]
