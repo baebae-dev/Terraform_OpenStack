@@ -1,5 +1,5 @@
 module "test" {
-  source = "./services/test"
+  source = "services/volume_attach"
 
   # openAPI
   auth_url                     = var.auth_url
@@ -26,4 +26,9 @@ module "test" {
   volume_count        = var.volume_count
   volume_size         = var.volume_size
   volume_path         = var.volume_path
+  # vpc
+  private_subnet_cidrs = var.private_subnet_cidrs
+  public_subnet_cidrs  = var.public_subnet_cidrs
+  network_name         = var.network_name
+  subnet_name          = var.subnet_name
 }

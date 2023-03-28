@@ -36,7 +36,7 @@ if [[ ${get_X_Auth_Token} == "True" ]]; then
   rm result_Object_storage_header.txt
 else
   echo ""
-    export X_Auth_Token="gAAAAABkGX-E9iH-GRhgYfOObGHByQpVl-SUimUux9yn70heHLlRyHzZy0nXGAvKgn0AhKBVTe6rqRqSfDkCZIUYBtVsK8rvW_CG9q-bmVt2M5GVkQKtO-yhHjlv5qwp0YqOQWocjS86LlIAlXIY3Q_6Ay2nOtHmt7gvL6Rfv57e7GJ0b8ca5fY"
+  export X_Auth_Token="gAAAAABkIPM41xrtmLtWqkJB2lWNFw4EajMYrhoYUXKDDJ180eoPbD_3jBNhMoMBzwTOEZAhlPxAiR2XS9zdJ-poTmHT1vaZtmq7H1yAc0MSvKqJZzw7osWoH3E2Y5E0L0iQQLgLC5SzUdELXGy1he-4yMbcHFB6ne73oUN-UHkov49znLz8ykE"
 fi
 
 export remote_state_filenm="terraform-test.tfstate"
