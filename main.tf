@@ -1,5 +1,5 @@
 module "test" {
-  source = "./services/test2"
+  source = "services/volume_attach"
 
   # openAPI
   auth_url                     = var.auth_url
