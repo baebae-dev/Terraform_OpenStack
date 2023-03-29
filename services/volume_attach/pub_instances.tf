@@ -3,7 +3,7 @@ module "pub_instance" {
 
   count         = var.instance_count
   instance_name = "${var.prefix}${var.pub_instance_name}-${count.index}"
-  keypair_name  = "bell-tf-keypair"
+  keypair_name  = module.keypair.keypair_name
 
   network_id    = module.vpc.public_network_ids[0]
   subnet_id     = module.vpc.public_subnet_ids[0]

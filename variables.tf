@@ -137,6 +137,11 @@ variable "subnet_name" {
   default = "default-subnet"
 }
 
+variable "router_name" {
+  type    = string
+  default = ""
+}
+
 variable "region_name" {
   type    = string
   default = ""

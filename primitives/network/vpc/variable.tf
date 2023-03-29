@@ -50,7 +50,7 @@ variable "enable_dhcp" {
 
 variable "dns_nameservers" {
   type    = list(string)
-  default = ["8.8.8.8"]
+  default = ["10.182.248.11"]
 }
 
 variable "enable_nat_instance" {
