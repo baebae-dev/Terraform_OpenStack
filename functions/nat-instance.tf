@@ -20,7 +20,7 @@ module "nat_instance" {
 
   port_name = "${var.prefix}${var.port_name}-${count.index}"
   is_public = true
-  public_ip_network_name = "${var.prefix}${var.public_ip_network_name}"
+  public_ip_network_name = var.public_ip_network_name
 }
 
 module "routing_table_ext" {

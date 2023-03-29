@@ -1,5 +1,5 @@
 module "app_server" {
-  source        = "../primitives/compute/instance"
+  source        = "../../primitives/compute/instance"
 
   count         = var.instance_count
   instance_name = "${var.prefix}${var.instance_name}-${count.index}"

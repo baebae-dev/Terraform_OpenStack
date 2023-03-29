@@ -13,3 +13,18 @@ variable "volume_count" {
   type = number
   default = 1
 }
+
+variable "volume_path" {
+  type = string
+  default = "/dev/vdb"
+}
+
+variable "instance_id" {
+  type = list(string)
+  default = []
+}
+
+variable "instance_count" {
+  type    = number
+  default = 1
+}

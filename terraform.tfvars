@@ -39,4 +39,3 @@ sec_group_name_pub     = "sg-pub"
 
 # extra
 prefix = "bell-" # 본인 이름으로 변경하고 사용
-env    = "test"
