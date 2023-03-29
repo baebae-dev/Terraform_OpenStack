@@ -1,21 +1,10 @@
-locals {
-  keypair_name = "jason-tf-keypair"
-}
-
-module "keypair" {
-  source = "../../primitives/compute/keypair"
-
-  keypair_name = local.keypair_name
-  region_name  = "RegionOne"
-}
-
 module "instance_bastion" {
   source = "../../primitives/compute/instance"
 
-  count         = 1
-  instance_name = "jason-tf-instance-pub-web"
-  image_name    = "Ubuntu18.04.6-Cloud"
-  flavor_name    = "a1.4c4m"
+  count         = var.instance_bastion_count
+  instance_name = "${var.prefix}${var.instance_bastion_name}-web"
+  image_name    = var.image_name
+  flavor_name   = var.flavor_name
 
   network_id    = module.vpc.public_network_ids[0]
   subnet_id     = module.vpc.public_subnet_ids[0]
@@ -25,18 +14,21 @@ module "instance_bastion" {
     module.sg_bastion.sec_group_id
   ]
 
-  port_name    = "jason-tf-instance-bastion-port"
-  keypair_name = local.keypair_name
-  public_ip_network_name = "jason-tf-network-public"
+  port_name    = "${var.prefix}${var.instance_bastion_name}-port"
+  create_keypair = var.create_keypair
+  keypair_name = var.keypair_name
+
+  is_public = true
+  public_ip_network_name = "ext-private-net1"
 }
 
 module "instance_app" {
   source = "../../primitives/compute/instance"
 
-  count         = 1
-  instance_name = "jason-tf-instance-priv-app"
-  image_name    = "Ubuntu18.04.6-Cloud"
-  flavor_name    = "a1.2c2m"
+  count         = var.instance_app_count
+  instance_name = "${var.prefix}${var.instance_app_name}"
+  image_name    = var.image_name
+  flavor_name   = var.flavor_name
 
   network_id    = module.vpc.private_network_ids[0]
   subnet_id     = module.vpc.private_subnet_ids[0]
@@ -46,17 +38,17 @@ module "instance_app" {
     module.sg_priv.sec_group_id
   ]
 
-  port_name = "jason-tf-instance-app-port"
-  keypair_name   = local.keypair_name
+  port_name = "${var.prefix}${var.instance_app_name}-port"
+  keypair_name = var.keypair_name
 }
 
 module "instance_db" {
   source = "../../primitives/compute/instance"
 
-  count         = 1
-  instance_name = "jason-tf-instance-priv-db"
-  image_name    = "Ubuntu18.04.6-Cloud"
-  flavor_name    = "a1.2c2m"
+  count         = var.instance_db_count
+  instance_name = "${var.prefix}${var.instance_db_name}"
+  image_name    = var.image_name
+  flavor_name   = var.flavor_name
 
   network_id    = module.vpc.private_network_ids[1]
   subnet_id     = module.vpc.private_subnet_ids[1]
@@ -66,6 +58,6 @@ module "instance_db" {
     module.sg_priv.sec_group_id
   ]
 
-  port_name = "jason-tf-instance-db-port"
-  keypair_name   = local.keypair_name
+  port_name = "${var.prefix}${var.instance_db_name}-port"
+  keypair_name = var.keypair_name
 }

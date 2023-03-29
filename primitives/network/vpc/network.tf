@@ -52,7 +52,7 @@ module "ext_router" {
   source = "../router/ext"
 #  count  = var.external && length(var.public_subnet_cidrs) > 0 ? length(var.public_subnet_cidrs) : 0
 
-  router_name         = "${var.router_name}-ext"
+  router_name         = "${var.router_name}"
   external_network_id = var.external_network_id
 
   network_ids         = openstack_networking_network_v2.public[*].id
@@ -72,7 +72,7 @@ module "ext_router" {
 
 module "in_router" {
   source = "../router/in"
-  router_name   = "${var.router_name}-in"
+  router_name   = "${var.router_name}"
 
   network_ids_a = openstack_networking_network_v2.public[*].id
   subnet_ids_a  = openstack_networking_subnet_v2.public[*].id

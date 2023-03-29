@@ -4,8 +4,8 @@
 
 module "keypair" {
   source = "../keypair"
-  count  = var.create_keypair
-  keypair_name   = var.keypair_name
+  count  = var.create_keypair ? 1:0
+  keypair_name  = var.keypair_name
 }
 
 ################################################################################
@@ -16,8 +16,8 @@ resource "openstack_compute_instance_v2" "instance" {
   name            = var.instance_name
   region          = var.region_name
   image_id        = data.openstack_images_image_v2.image.id
-  flavor_id        = data.openstack_compute_flavor_v2.flavor.id
-  key_pair        = module.keypair.keypair_name
+  flavor_id       = data.openstack_compute_flavor_v2.flavor.id
+  key_pair        = var.keypair_name
 
 #  block_device {
 #    uuid                  = data.openstack_images_image_v2.image.id

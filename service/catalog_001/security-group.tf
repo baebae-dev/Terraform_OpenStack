@@ -1,6 +1,6 @@
 module "sg_bastion" {
-  source = "../../primitives/security-group"
-  sec_group_name = "jason-tf-secgroup-pub"
+  source = "../../primitives/security_group"
+  sec_group_name = "${var.prefix}${var.security_group_name}-pub"
   description = "my public security group"
 
   rules  = [
@@ -40,8 +40,8 @@ module "sg_bastion" {
 }
 
 module "sg_priv" {
-  source = "../../primitives/security-group"
-  sec_group_name = "jason-tf-secgroup-priv"
+  source = "../../primitives/security_group"
+  sec_group_name = "${var.prefix}${var.security_group_name}-priv"
   description = "my private security group"
 
   rules  = [

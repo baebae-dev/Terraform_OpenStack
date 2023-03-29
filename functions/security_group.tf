@@ -1,5 +1,5 @@
 module "sg_pub" {
-  source = "../primitives/security-group"
+  source = "../primitives/security_group"
   sec_group_name = "${var.prefix}${var.sec_group_name_pub}"
   description = "my public security group"
 
@@ -32,7 +32,7 @@ module "sg_pub" {
 }
 
 module "sg_priv" {
-  source = "../primitives/security-group"
+  source = "../primitives/security_group"
   sec_group_name = "${var.prefix}${var.sec_group_name_priv}"
   description = "my private security group"
 
@@ -65,7 +65,7 @@ module "sg_priv" {
 }
 
 module "sg_bastion" {
-  source = "../primitives/security-group"
+  source = "../primitives/security_group"
   sec_group_name = "${var.prefix}${var.sec_group_name_bastion}"
   description = "my bastion security group"
 
