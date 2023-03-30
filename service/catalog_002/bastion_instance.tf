@@ -2,7 +2,7 @@ module "instance_bastion" {
   source = "../../primitives/compute/instance"
 
   count         = var.instance_bastion_count
-  instance_name = "${var.prefix}${var.instance_bastion_name}-web-${count.index}"
+  instance_name = "${var.prefix}${var.instance_bastion_name}-${count.index}"
   image_name    = var.image_name
   flavor_name   = var.flavor_name
 

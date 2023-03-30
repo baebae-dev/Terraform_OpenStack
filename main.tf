@@ -43,7 +43,5 @@ module "main" {
   network_name         = var.network_name
   subnet_name          = var.subnet_name
   router_name          = var.router_name
-  nat_instance_ip      = var.nat_instance_ip
-  routing_table_in_next_hops  = var.routing_table_in_next_hops
 
 }

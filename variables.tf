@@ -40,16 +40,6 @@ variable "private_subnet_cidrs" {
   default = []
 }
 
-variable "routing_table_in_next_hops" {
-  type = list(string)
-  default = []
-}
-
-variable "nat_instance_ip" {
-  type = string
-  default = ""
-}
-
 # openAPI
 variable "openapi_user_name" {
   description = "openapi_user_name"

@@ -26,10 +26,6 @@ router_name            = "tf-router"
 public_subnet_cidrs    = ["192.168.1.0/24"]
 private_subnet_cidrs   = ["192.168.10.0/24"]
 
-nat_instance_ip        = "192.168.1.254"
-routing_table_in_next_hops = ["192.168.1.254"]
-
-
 # extra
 prefix = "bell-" # 본인 이름으로 변경하고 사용
 
