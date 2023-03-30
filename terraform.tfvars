@@ -1,10 +1,14 @@
 # instance
 instance_app_name      = "tf-instance-app"
 instance_app_count     = 1
-instance_bastion_name  = "tf-instance-pub"
+instance_pub_name      = "tf-instance-pub"
+instance_pub_count     = 1
+instance_bastion_name  = "tf-instance-bastion"
 instance_bastion_count = 1
+instance_nat_name      = "tf-instance-nat"
+instance_nat_count     = 1
 instance_db_name       = "tf-instance-db"
-instance_db_count      = 1
+instance_db_count      = 0
 image_name             = "Ubuntu18.04.6-Cloud"
 flavor_name            = "a1.2c2m"
 
@@ -20,7 +24,11 @@ network_name           = "tf-network"
 subnet_name            = "tf-subnet"
 router_name            = "tf-router"
 public_subnet_cidrs    = ["192.168.1.0/24"]
-private_subnet_cidrs   = ["192.168.10.0/24", "192.168.11.0/24"]
+private_subnet_cidrs   = ["192.168.10.0/24"]
+
+nat_instance_ip        = "192.168.1.254"
+routing_table_in_next_hops = ["192.168.1.254"]
+
 
 # extra
 prefix = "bell-" # 본인 이름으로 변경하고 사용

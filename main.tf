@@ -1,5 +1,5 @@
 module "main" {
-  source = "./service/catalog_001"
+  source = "./service/catalog_002"
 
   # openAPI
   auth_url                     = var.auth_url
@@ -22,6 +22,8 @@ module "main" {
   # instance
   instance_app_count      = var.instance_app_count
   instance_app_name       = var.instance_app_name
+  instance_pub_count      = var.instance_pub_count
+  instance_pub_name       = var.instance_pub_name
   instance_bastion_count  = var.instance_bastion_count
   instance_bastion_name   = var.instance_bastion_name
   instance_db_count       = var.instance_db_count
@@ -39,5 +41,7 @@ module "main" {
   network_name         = var.network_name
   subnet_name          = var.subnet_name
   router_name          = var.router_name
+  nat_instance_ip      = var.nat_instance_ip
+  routing_table_in_next_hops  = var.routing_table_in_next_hops
 
 }
