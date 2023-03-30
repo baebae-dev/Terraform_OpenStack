@@ -18,7 +18,7 @@ module "nat_instance" {
   fixed_ip_address = "192.168.1.254"
 
   port_name = "${var.prefix}${var.instance_nat_name}-${count.index}"
-  keypair_name = var.keypair_name
+  keypair_name = "${var.prefix}${var.keypair_name}"
 
   is_public = true
   public_ip_network_name = "ext-private-net1"

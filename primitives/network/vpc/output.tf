@@ -15,7 +15,7 @@ output "private_subnet_ids" {
 }
 
 output "ext_router_id" {
-  value = module.ext_router.ext_router_id
+  value = module.ext_router[0].ext_router_id
 }
 
 output "in_router_id" {

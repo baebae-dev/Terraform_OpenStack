@@ -11,7 +11,8 @@ module "instance_app" { # private
 
   port_security_enabled = true
   sec_group_ids = [
-    module.sg_priv.sec_group_id
+    module.sg_priv.sec_group_id,
+    "87e501b8-b374-4299-bf62-d7869cfb6afb" // default security-group
   ]
 
   port_name = "${var.prefix}${var.instance_app_name}-port"
@@ -32,9 +33,10 @@ module "instance_pub" {
 
   port_security_enabled = true
   sec_group_ids = [
-    module.sg_pub.sec_group_id
+    module.sg_pub.sec_group_id,
+    "87e501b8-b374-4299-bf62-d7869cfb6afb" // default security-group
   ]
 
   port_name = "${var.prefix}${var.instance_pub_name}-port"
-  keypair_name = var.keypair_name
+  keypair_name = "${var.prefix}${var.keypair_name}"
 }
