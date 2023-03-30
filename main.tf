@@ -26,6 +26,8 @@ module "main" {
   instance_pub_name       = var.instance_pub_name
   instance_bastion_count  = var.instance_bastion_count
   instance_bastion_name   = var.instance_bastion_name
+  instance_nat_name       = var.instance_nat_name
+  instance_nat_count      = var.instance_nat_count
   instance_db_count       = var.instance_db_count
   instance_db_name        = var.instance_db_name
   image_name              = var.image_name
