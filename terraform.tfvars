@@ -1,5 +1,5 @@
 # instance
-instance_app_name      = "tf-instance-app"
+instance_app_name      = "tf-instance-priv"
 instance_app_count     = 1
 instance_pub_name      = "tf-instance-pub"
 instance_pub_count     = 1

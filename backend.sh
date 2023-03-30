@@ -1,7 +1,7 @@
 #!/bin/bash
 source ./env.sh
 
-export get_X_Auth_Token="True"
+export get_X_Auth_Token="False"
 # get X_Auth_Token
 if [[ ${get_X_Auth_Token} == "True" ]]; then
   curl -i --location 'https://gov-cbt-keystone.kakaoicloud.in/v3/auth/tokens' \
@@ -36,7 +36,7 @@ if [[ ${get_X_Auth_Token} == "True" ]]; then
   rm result_Object_storage_header.txt
 else
   echo ""
-    export X_Auth_Token="gAAAAABkI9dKu1fPmVmdLILz5XzbmsatIuF82q7jS2LhgxA5cS5U2C9iMhoc--rPexf98rUUta1CeiXzgOLCrB5zXXD9OxprZv0nQvl67CPev5uDasP4oOJ3JGvqoPf-LqzDK8CEYcZhAwCWQChD_pQpFADjhWDK0KkTwRW3eLrs23-VSEumQfM"
+    export X_Auth_Token="gAAAAABkJP9KrkGtJVnbk9xMDkx2Po-QcFi8v2wR7_Nu476moe8Xud8o2cQwd52MCzuoWVCN5mVi26Wy8cW6w_eQ3i8KbgJ8Gz_fututJDJjN0W8956CgRN7BpnrzNRo8lkK5jJlcIcRFcoYysUbcE8MSx_DmYi5wdlMetn0J3oJtM3VTOb5t6M"
 fi
 
 export remote_state_filenm="terraform-test.tfstate"

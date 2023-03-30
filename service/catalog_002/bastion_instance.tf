@@ -20,4 +20,8 @@ module "instance_bastion" {
 
   is_public = true
   public_ip_network_name = "ext-private-net1"
+
+  depends_on = [
+    module.vpc
+  ]
 }

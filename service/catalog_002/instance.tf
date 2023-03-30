@@ -18,6 +18,10 @@ module "instance_app" { # private
   port_name = "${var.prefix}${var.instance_app_name}-port"
   create_keypair = var.create_keypair
   keypair_name = "${var.prefix}${var.keypair_name}"
+
+  depends_on = [
+    module.vpc
+  ]
 }
 
 module "instance_pub" {
@@ -37,6 +41,13 @@ module "instance_pub" {
     "87e501b8-b374-4299-bf62-d7869cfb6afb" // default security-group
   ]
 
+  is_public = true
+  public_ip_network_name = "ext-private-net1"
+
   port_name = "${var.prefix}${var.instance_pub_name}-port"
   keypair_name = "${var.prefix}${var.keypair_name}"
+
+  depends_on = [
+    module.vpc
+  ]
 }
