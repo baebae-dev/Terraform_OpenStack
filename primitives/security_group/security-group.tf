@@ -10,7 +10,7 @@ resource "openstack_networking_secgroup_rule_v2" "rule_ssh_ingress" {
   direction         = try(var.rules[count.index].direction, "")
   ethertype         = try(var.rules[count.index].ethertype, "")
   protocol          = try(var.rules[count.index].protocol, "")
-  port_range_min    = try(var.rules[count.index].port_range_min, "")
-  port_range_max    = try(var.rules[count.index].port_range_max, "")
+  port_range_min    = try(var.rules[count.index].port_range_min, null)
+  port_range_max    = try(var.rules[count.index].port_range_max, null)
   remote_ip_prefix   = try(var.rules[count.index].remote_ip_prefix, "")
 }
