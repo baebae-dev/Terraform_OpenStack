@@ -1,6 +1,6 @@
 module "sg_bastion" {
   source = "../../primitives/security_group"
-  sec_group_name = "${var.prefix}${var.security_group_name}-pub"
+  sec_group_name = "${var.prefix}${var.security_group_name}-bastion"
   description = "my public security group"
 
   rules  = [
