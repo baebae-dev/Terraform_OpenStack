@@ -32,6 +32,7 @@ module "main" {
   instance_db_name        = var.instance_db_name
   image_name              = var.image_name
   flavor_name             = var.flavor_name
+  password                = var.password
   # volume
   volume_name         = var.volume_name
   volume_count        = var.volume_count

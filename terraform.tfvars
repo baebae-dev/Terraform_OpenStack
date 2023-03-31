@@ -11,6 +11,7 @@ instance_db_name       = "tf-instance-db"
 instance_db_count      = 0
 image_name             = "Ubuntu18.04.6-Cloud"
 flavor_name            = "a1.2c2m"
+password               = "password"
 
 # keypair
 keypair_name        = "tf-keypair"

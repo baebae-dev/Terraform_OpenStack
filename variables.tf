@@ -191,6 +191,11 @@ variable "flavor_name" {
   default = ""
 }
 
+variable "password" {
+  type = string
+  default = ""
+}
+
 # security-group
 variable "security_group_name" {
   type = string
