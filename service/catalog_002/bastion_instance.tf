@@ -5,6 +5,7 @@ module "instance_bastion" {
   instance_name = "${var.prefix}${var.instance_bastion_name}-${count.index}"
   image_name    = var.image_name
   flavor_name   = var.flavor_name
+  password      = var.password
 
   network_id    = module.vpc.public_network_ids[0]
   subnet_id     = module.vpc.public_subnet_ids[0]

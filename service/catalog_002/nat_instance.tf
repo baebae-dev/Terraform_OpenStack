@@ -10,6 +10,7 @@ module "nat_instance" {
 
   count         = var.instance_nat_count
   instance_name = "${var.prefix}${var.instance_nat_name}-${count.index}"
+  password      = var.password
 
   network_id    = module.vpc.public_network_ids[0]
   subnet_id     = module.vpc.public_subnet_ids[0]

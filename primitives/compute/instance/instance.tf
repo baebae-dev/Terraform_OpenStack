@@ -9,6 +9,14 @@ resource "openstack_compute_instance_v2" "instance" {
   flavor_id       = data.openstack_compute_flavor_v2.flavor.id
   key_pair        = var.keypair_name
 
+  user_data = <<EOF
+   #cloud-config
+   password: ${var.password}
+   chpasswd: { expire: True }
+   ssh_pwauth: True
+  EOF
+
+
 #  block_device {
 #    uuid                  = data.openstack_images_image_v2.image.id
 #    source_type           = "image"

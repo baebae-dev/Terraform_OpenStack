@@ -33,6 +33,11 @@ variable "keypair_name" {
   default = ""
 }
 
+variable "password" {
+  type = string
+  default = ""
+}
+
 variable "network_id" {
   type    = string
   default = ""
