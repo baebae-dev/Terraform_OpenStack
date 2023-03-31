@@ -1,5 +1,5 @@
-module "test" {
-  source = "./services/volume_attach"
+module "main" {
+  source = "./service/catalog_002"
 
   # openAPI
   auth_url                     = var.auth_url
@@ -15,12 +15,24 @@ module "test" {
   prefix = var.prefix
 
   # security-group
-  sec_group_name_priv = var.sec_group_name_priv
+  security_group_name = var.security_group_name
   # keypair
   keypair_name        = var.keypair_name
+  create_keypair      = var.create_keypair
   # instance
-  instance_count      = var.instance_count
-  instance_name       = var.instance_name
+  instance_app_count      = var.instance_app_count
+  instance_app_name       = var.instance_app_name
+  instance_pub_count      = var.instance_pub_count
+  instance_pub_name       = var.instance_pub_name
+  instance_bastion_count  = var.instance_bastion_count
+  instance_bastion_name   = var.instance_bastion_name
+  instance_nat_name       = var.instance_nat_name
+  instance_nat_count      = var.instance_nat_count
+  instance_db_count       = var.instance_db_count
+  instance_db_name        = var.instance_db_name
+  image_name              = var.image_name
+  flavor_name             = var.flavor_name
+  password                = var.password
   # volume
   volume_name         = var.volume_name
   volume_count        = var.volume_count
@@ -32,4 +44,5 @@ module "test" {
   network_name         = var.network_name
   subnet_name          = var.subnet_name
   router_name          = var.router_name
+
 }

@@ -1,29 +1,39 @@
 # instance
-instance_count         = 1
-instance_name          = "tf-instance-app"
-bastion_instance_name  = "tf-bastion-instance"
-nat_instance_name      = "tf-nat-instance"
+instance_app_name      = "tf-instance-priv"
+instance_app_count     = 1
+instance_pub_name      = "tf-instance-pub"
+instance_pub_count     = 1
+instance_bastion_name  = "tf-instance-bastion"
+instance_bastion_count = 1
+instance_nat_name      = "tf-instance-nat"
+instance_nat_count     = 1
+instance_db_name       = "tf-instance-db"
+instance_db_count      = 0
+image_name             = "Ubuntu18.04.6-Cloud"
+flavor_name            = "a1.2c2m"
+password               = "password"
+
+# keypair
+keypair_name        = "tf-keypair"
+create_keypair      = true
+
+# security-group
+security_group_name = "tf-secgroup"
 
 # network
-port_name              = "tf-port"
 network_name           = "tf-network"
 subnet_name            = "tf-subnet"
 router_name            = "tf-router"
-public_ip_network_name = "ext-private-net1"
 public_subnet_cidrs    = ["192.168.1.0/24"]
 private_subnet_cidrs   = ["192.168.10.0/24"]
-routing_table_ext_next_hops = ["192.168.0.254"]
-# 아래 두개는 같아야.
-nat_instance_ip        = "192.168.0.59"
-routing_table_in_next_hops = ["192.168.0.59"]
+
+# extra
+prefix = "bell-" # 본인 이름으로 변경하고 사용
 
 # volume
 volume_count        = 1
 volume_name         = "tf-volume"
 volume_size         = "500"
-
-# keypair
-keypair_name        = "tf-keypair"
 
 # object_storage
 object_storage_name = "tf-backend-container"
@@ -31,11 +41,3 @@ object_storage_name = "tf-backend-container"
 # backend
 remote_state_name = "remote-state"
 backend_address = "https://gov-cbt-objectstorage.kakaoicloud.in/v1/8323ba34b836415a98bc45c8b715dcfc/remote-state/terraform.tfstate"
-
-# security-group
-sec_group_name_bastion = "sg-bastion"
-sec_group_name_priv    = "sg-priv"
-sec_group_name_pub     = "sg-pub"
-
-# extra
-prefix = "bell-" # 본인 이름으로 변경하고 사용

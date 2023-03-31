@@ -5,11 +5,6 @@ variable "prefix" {
 }
 
 # vpc
-variable "port_name" {
-  type    = string
-  default = ""
-}
-
 variable "network_name" {
   type = string
   default = ""
@@ -25,11 +20,6 @@ variable "router_name" {
   default = ""
 }
 
-variable "public_ip_network_name" {
-  type    = string
-  default = ""
-}
-
 variable "public_subnet_cidrs" {
   type    = list(string)
   default = []
@@ -38,6 +28,16 @@ variable "public_subnet_cidrs" {
 variable "private_subnet_cidrs" {
   type    = list(string)
   default = []
+}
+
+variable "routing_table_in_next_hops" {
+  type = list(string)
+  default = []
+}
+
+variable "nat_instance_ip" {
+  type = string
+  default = ""
 }
 
 # openAPI
@@ -80,16 +80,6 @@ variable "user_domain_name" {
   description = "user_domain_name"
   type        = string
   sensitive   = true
-}
-
-variable "sec_group_name_priv" {
-  type    = string
-  default = ""
-}
-
-variable "sec_group_name_pub" {
-  type    = string
-  default = ""
 }
 
 variable "auth_url" {
@@ -136,6 +126,21 @@ variable "instance_app_count" {
   default = 1
 }
 
+variable "instance_app_name" {
+  type    = string
+  default = ""
+}
+
+variable "instance_pub_count" {
+  type    = number
+  default = 1
+}
+
+variable "instance_pub_name" {
+  type    = string
+  default = ""
+}
+
 variable "instance_bastion_name" {
   type    = string
   default = ""
@@ -144,11 +149,6 @@ variable "instance_bastion_name" {
 variable "instance_bastion_count" {
   type    = number
   default = 1
-}
-
-variable "instance_app_name" {
-  type    = string
-  default = ""
 }
 
 variable "instance_nat_name" {
@@ -161,24 +161,14 @@ variable "instance_nat_count" {
   default = 1
 }
 
-variable "instance_db_count" {
-  type    = number
-  default = 1
-}
-
-variable "instance_pub_name" {
-  type    = string
-  default = ""
-}
-
-variable "instance_pub_count" {
-  type    = number
-  default = 1
-}
-
 variable "instance_db_name" {
   type    = string
   default = ""
+}
+
+variable "instance_db_count" {
+  type    = number
+  default = 1
 }
 
 variable "image_name" {
