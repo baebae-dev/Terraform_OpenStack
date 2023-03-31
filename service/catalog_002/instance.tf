@@ -17,7 +17,6 @@ module "instance_app" { # private
   ]
 
   port_name = "${var.prefix}${var.instance_app_name}-port"
-  create_keypair = var.create_keypair
   keypair_name = "${var.prefix}${var.keypair_name}"
 
   depends_on = [

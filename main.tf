@@ -18,7 +18,6 @@ module "main" {
   security_group_name = var.security_group_name
   # keypair
   keypair_name        = var.keypair_name
-  create_keypair      = var.create_keypair
   # instance
   instance_app_count      = var.instance_app_count
   instance_app_name       = var.instance_app_name

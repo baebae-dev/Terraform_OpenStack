@@ -116,11 +116,6 @@ variable "keypair_name" {
   default = ""
 }
 
-variable "create_keypair" {
-  type = bool
-  default = true
-}
-
 variable "instance_app_count" {
   type    = number
   default = 1

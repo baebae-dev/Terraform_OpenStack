@@ -23,11 +23,6 @@ variable "flavor_name" {
   default = "a1.2c2m"
 }
 
-variable "create_keypair" {
-  type    = bool
-  default = false
-}
-
 variable "keypair_name" {
   type    = string
   default = ""
