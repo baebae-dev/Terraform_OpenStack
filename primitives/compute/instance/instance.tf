@@ -11,7 +11,7 @@ resource "openstack_compute_instance_v2" "instance" {
 
   user_data = <<EOF
    #cloud-config
-   password: ${var.password}
+   password: password
    chpasswd: { expire: False }
    ssh_pwauth: True
   EOF

@@ -2,7 +2,7 @@ module "instance_app" { # private
   source = "../../primitives/compute/instance"
 
   count         = var.instance_app_count
-  instance_name = "${var.prefix}${var.instance_app_name}-${count.index}"
+  instance_name = "${var.prefix}${var.instance_app_name}"
   image_name    = var.image_name
   flavor_name   = var.flavor_name
   password      = var.password
@@ -28,7 +28,7 @@ module "instance_pub" {
   source = "../../primitives/compute/instance"
 
   count         = var.instance_pub_count
-  instance_name = "${var.prefix}${var.instance_pub_name}-${count.index}"
+  instance_name = "${var.prefix}${var.instance_pub_name}"
   image_name    = var.image_name
   flavor_name   = var.flavor_name
   password      = var.password

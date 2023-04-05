@@ -2,7 +2,7 @@ module "nat_instance" {
   source        = "../../primitives/compute/instance"
 
   count         = var.instance_nat_count
-  instance_name = "${var.prefix}${var.instance_nat_name}-${count.index}"
+  instance_name = "${var.prefix}${var.instance_nat_name}"
 
   network_id    = module.vpc.public_network_ids[0]
   subnet_id     = module.vpc.public_subnet_ids[0]
