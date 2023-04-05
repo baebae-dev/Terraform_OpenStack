@@ -16,7 +16,7 @@ module "nat_instance" {
   subnet_id     = module.vpc.public_subnet_ids[0]
 
   port_security_enabled = false
-  fixed_ip_address = "192.168.1.254"
+  fixed_ip_address = var.nat_instance_ip
 
   port_name = "${var.prefix}${var.port_name}-${count.index}"
   is_public = true
