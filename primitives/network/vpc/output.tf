@@ -21,3 +21,7 @@ output "ext_router_id" {
 output "in_router_id" {
   value = module.in_router.in_router_id
 }
+
+output "pub_interface_port_ip" {
+  value = module.in_router.pub_interface_port_ip[0]
+}

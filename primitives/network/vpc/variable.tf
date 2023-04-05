@@ -38,6 +38,11 @@ variable "private_subnet_cidrs" {
   default = []
 }
 
+variable "private_gateway_ip" {
+  type = string
+  default = ""
+}
+
 variable "ip_version" {
   type    = string
   default = 4

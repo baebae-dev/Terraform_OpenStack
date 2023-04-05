@@ -15,7 +15,6 @@ password               = "password"
 
 # keypair
 keypair_name        = "tf-keypair"
-create_keypair      = true
 
 # security-group
 security_group_name = "tf-secgroup"

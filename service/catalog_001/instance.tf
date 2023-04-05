@@ -15,7 +15,6 @@ module "instance_bastion" {
   ]
 
   port_name    = "${var.prefix}${var.instance_bastion_name}-port"
-  create_keypair = var.create_keypair
   keypair_name = var.keypair_name
 
   is_public = true

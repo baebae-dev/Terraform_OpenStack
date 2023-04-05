@@ -1,7 +1,7 @@
 #!/bin/bash
 source ./env.sh
 
-export get_X_Auth_Token="False"
+export get_X_Auth_Token="True"
 # get X_Auth_Token
 if [[ ${get_X_Auth_Token} == "True" ]]; then
   curl -i --location 'https://gov-cbt-keystone.kakaoicloud.in/v3/auth/tokens' \
@@ -36,7 +36,7 @@ if [[ ${get_X_Auth_Token} == "True" ]]; then
   rm result_Object_storage_header.txt
 else
   echo ""
-    export X_Auth_Token="gAAAAABkJoCVyvvmOf22tCAUsMI5S1VaX6TQfiJmHPjzvfGzgbFQ3iECWR5N9ML0yJ5pCNKun3bNQ1iDo66b1d7J2GDezbwrruh4_8I3Z4icLEu8fe-S__0lCwS22MmfR414S7ggPoJdoueB7f5a78O3rgLVPYPQZU1ijkfWy75eIjCNA_QQHQQ"
+    export X_Auth_Token="gAAAAABkK6jNDSeOoqr8cKNvXYR8zyxSySoTGD-cqklngxbpTswXJG5zI90aA027oZC74IryJBCMDq6Oi4XwjfyMXNm4Jg_30EHw-A36_eegG24uYJKEy17TqVf0oYRxb4eGepx7gdGwz9WcZs4JgViIePowYsWY0cUUO2R-xX2IHZm5B_xUBAo"
 fi
 
 export remote_state_filenm="terraform-test.tfstate"
@@ -44,4 +44,4 @@ export object_storage_url="https://gov-cbt-objectstorage.kakaoicloud.in/v1/8323b
 
 # backend 파일 전송
 echo "curl -i ${object_storage_url} -X  PUT -d "@terraform.tfstate" -H \"X-Auth-Token: ${X_Auth_Token}\""
-curl -i ${object_storage_url} -X PUT -d "@terraform.tfstate" -H "X-Auth-Token: ${X_Auth_Token}" --http1.1
+curl -i ${object_storage_url} -X PUT -d "@terraform.tfstate" -H "{\"X-Auth-Token\": \"${X_Auth_Token}\"}" --http1.1

@@ -38,6 +38,11 @@ variable "subnet_ids_b" {
   default = []
 }
 
+variable "private_gateway_ip" {
+  type    = list(string)
+  default = []
+}
+
 variable "fixed_ip_address" {
   type    = string
   default = null
