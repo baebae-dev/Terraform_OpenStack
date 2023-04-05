@@ -26,26 +26,47 @@ resource "openstack_networking_router_v2" "router_internal" {
 # Router Interface
 ################################################################################
 
-resource "openstack_networking_router_interface_v2" "router_interface" {
-  count     = local.total_subnet_count
+resource "openstack_networking_router_interface_v2" "router_interface_pub" {
+  count     = length(var.subnet_ids_a)
   region    = var.region_name
   router_id = openstack_networking_router_v2.router_internal.id
-  port_id = openstack_networking_port_v2.port[count.index].id
+  port_id   = openstack_networking_port_v2.port_pub[count.index].id
+}
+
+resource "openstack_networking_router_interface_v2" "router_interface_priv" {
+  count     = length(var.subnet_ids_b)
+  region    = var.region_name
+  router_id = openstack_networking_router_v2.router_internal.id
+  port_id   = openstack_networking_port_v2.port_priv[count.index].id
 }
 
 ################################################################################
 # Port
 ################################################################################
 
-resource "openstack_networking_port_v2" "port" {
-  count          = local.total_subnet_count
+resource "openstack_networking_port_v2" "port_pub" {
+  count          = length(var.subnet_ids_a)
   region         = var.region_name
-  network_id     = local.total_network_ids[count.index]
+  network_id     = var.network_ids_a[count.index]
   admin_state_up = var.admin_state_up
 
   fixed_ip {
-    subnet_id  = local.total_subnet_ids[count.index]
+    subnet_id  = var.subnet_ids_a[count.index]
     ip_address = var.fixed_ip_address == null ? null : var.fixed_ip_address
+  }
+
+  port_security_enabled = var.port_security_enabled
+}
+
+resource "openstack_networking_port_v2" "port_priv" {
+  count          = length(var.subnet_ids_b)
+  region         = var.region_name
+  network_id     = var.network_ids_b[count.index]
+  admin_state_up = var.admin_state_up
+
+  fixed_ip {
+    subnet_id  = var.subnet_ids_b[count.index]
+    ip_address = var.private_gateway_ip[count.index]
   }
 
   port_security_enabled = var.port_security_enabled
@@ -69,7 +90,9 @@ resource "openstack_networking_router_route_v2" "router_route" {
 
   depends_on = [
     openstack_networking_router_v2.router_internal,
-    openstack_networking_router_interface_v2.router_interface,
-    openstack_networking_port_v2.port
+    openstack_networking_router_interface_v2.router_interface_priv,
+    openstack_networking_router_interface_v2.router_interface_pub,
+    openstack_networking_port_v2.port_priv,
+    openstack_networking_port_v2.port_pub
   ]
 }

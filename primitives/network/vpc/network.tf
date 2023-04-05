@@ -79,6 +79,7 @@ module "in_router" {
 
   network_ids_b = openstack_networking_network_v2.private[*].id
   subnet_ids_b  = openstack_networking_subnet_v2.private[*].id
+  private_gateway_ip = openstack_networking_subnet_v2.private[*].gateway_ip
 
   depends_on = [
     openstack_networking_network_v2.public,
