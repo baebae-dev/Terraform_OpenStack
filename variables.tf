@@ -188,7 +188,7 @@ variable "flavor_name" {
 
 variable "password" {
   type = string
-  default = ""
+  default = "password"
 }
 
 # security-group

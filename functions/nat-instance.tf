@@ -22,31 +22,3 @@ module "nat_instance" {
   is_public = true
   public_ip_network_name = "${var.prefix}${var.public_ip_network_name}"
 }
-
-module "routing_table_ext" {
-  source           = "../primitives/network/router/route"
-  router_id        = module.external_router.ext_router_id
-  destination_cidrs = ["192.168.10.0/24"]
-  next_hops         = ["192.168.1.1"]
-
-  depends_on = [
-    module.vpc,
-    module.external_router,
-    module.internal_router,
-    module.nat_instance
-  ]
-}
-
-module "routing_table_in" {
-  source           = "../primitives/network/router/route"
-  router_id        = module.internal_router.in_router_id
-  destination_cidrs = ["0.0.0.0/0"]
-  next_hops         = ["192.168.1.254"]
-
-  depends_on = [
-    module.vpc,
-    module.external_router,
-    module.internal_router,
-    module.nat_instance
-  ]
-}

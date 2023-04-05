@@ -30,7 +30,7 @@ variable "keypair_name" {
 
 variable "password" {
   type = string
-  default = ""
+  default = "password"
 }
 
 variable "network_id" {

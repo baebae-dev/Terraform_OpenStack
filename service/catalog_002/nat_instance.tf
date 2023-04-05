@@ -16,7 +16,10 @@ module "nat_instance" {
   subnet_id     = module.vpc.public_subnet_ids[0]
 
   port_security_enabled = false
-  fixed_ip_address = "192.168.1.254"
+  sec_group_ids = [
+    "87e501b8-b374-4299-bf62-d7869cfb6afb" // default security-group
+  ]
+  fixed_ip_address = "192.168.1.59"
 
   port_name = "${var.prefix}${var.instance_nat_name}-${count.index}"
   keypair_name = "${var.prefix}${var.keypair_name}"
