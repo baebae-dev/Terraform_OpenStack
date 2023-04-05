@@ -1,7 +1,7 @@
 module "app_server" {
   source        = "../primitives/compute/instance"
 
-  count         = 3
+  count         = var.instance_count
   instance_name = "${var.prefix}${var.instance_name}-${count.index}"
   keypair_name  = module.keypair.keypair_name
 
@@ -15,11 +15,3 @@ module "app_server" {
 
   port_name = "${var.prefix}${var.port_name}-${count.index}"
 }
-#
-#data "terraform_remote_state" "terraform_output" {
-#  backend = "http"
-#
-#  config = {
-#    address = "https://gov-cbt-objectstorage.kakaoicloud.in/v1/8323ba34b836415a98bc45c8b715dcfc/bell-tf-backend-container/test%2Fterraform.tfstate"
-#  }
-#}

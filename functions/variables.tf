@@ -1,6 +1,6 @@
 variable "prefix" {
   type = string
-  default = null
+  default = ""
 }
 
 variable "router_name" {
@@ -16,6 +16,32 @@ variable "subnet_name" {
 variable "network_name" {
   type    = string
   default = ""
+}
+
+variable "public_subnet_cidrs" {
+  type = list(string)
+  default = ["192.168.1.0/24"]
+}
+
+variable "private_subnet_cidrs" {
+  type = list(string)
+  default = ["192.168.10.0/24"]
+}
+
+## nat_instance_ip과 routing_table_in_next_hops는 같아야함.
+variable "nat_instance_ip" {
+  type = string
+  default = "192.168.10.0/24"
+}
+
+variable "routing_table_in_next_hops" {
+  type = list(string)
+  default = ["192.168.10.0/24"]
+}
+
+variable "routing_table_ext_next_hops" {
+  type = list(string)
+  default = ["192.168.1.1"]
 }
 
 variable "object_storage_name" {
@@ -50,6 +76,21 @@ variable "keypair_name" {
 variable "volume_count" {
   type = number
   default = 1
+}
+
+variable "volume_path" {
+  type = string
+  default = "/dev/vdb"
+}
+
+variable "instance_count" {
+  type    = number
+  default = 1
+}
+
+variable "instance_id" {
+  type = string
+  default = ""
 }
 
 variable "volume_name" {
