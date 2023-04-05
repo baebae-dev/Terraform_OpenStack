@@ -9,7 +9,6 @@ module "nat_instance" {
 
   port_security_enabled = false
   fixed_ip_address = "192.168.1.254"
-  password      = var.password
 
   port_name = "${var.prefix}${var.instance_nat_name}-${count.index}"
   keypair_name = "${var.prefix}${var.keypair_name}"

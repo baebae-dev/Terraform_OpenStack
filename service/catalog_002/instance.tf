@@ -5,7 +5,6 @@ module "instance_app" { # private
   instance_name = "${var.prefix}${var.instance_app_name}"
   image_name    = var.image_name
   flavor_name   = var.flavor_name
-  password      = var.password
 
   network_id    = module.vpc.private_network_ids[0]
   subnet_id     = module.vpc.private_subnet_ids[0]
@@ -31,7 +30,6 @@ module "instance_pub" {
   instance_name = "${var.prefix}${var.instance_pub_name}"
   image_name    = var.image_name
   flavor_name   = var.flavor_name
-  password      = var.password
 
   network_id    = module.vpc.public_network_ids[0]
   subnet_id     = module.vpc.public_subnet_ids[0]
