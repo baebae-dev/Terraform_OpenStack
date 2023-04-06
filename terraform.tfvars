@@ -39,4 +39,4 @@ object_storage_name = "tf-backend-container"
 
 # backend
 remote_state_name = "remote-state"
-backend_address = "https://gov-cbt-objectstorage.kakaoicloud.in/v1/8323ba34b836415a98bc45c8b715dcfc/remote-state/terraform-test.tfstate"
+backend_address = "https://gov-cbt-objectstorage.kakaoicloud.in/v1/8323ba34b836415a98bc45c8b715dcfc/remote-state/terraform-202304061354.tfstate"

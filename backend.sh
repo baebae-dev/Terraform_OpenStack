@@ -38,3 +38,7 @@ export object_storage_url="https://gov-cbt-objectstorage.kakaoicloud.in/v1/8323b
 # backend 파일 전송
 echo "curl -i ${object_storage_url} -X  PUT -d "@terraform.tfstatevv" -H \"X-Auth-Token: ${X_Auth_Token}\""
 curl -i ${object_storage_url} -X PUT -d "@terraform.tfstate" -H "X-Auth-Token: ${X_Auth_Token}" --http1.1
+
+echo "=========================================="
+echo "Save ${remote_state_filenm} file"
+echo "=========================================="

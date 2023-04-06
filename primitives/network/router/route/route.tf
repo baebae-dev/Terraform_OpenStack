@@ -1,5 +1,5 @@
 resource "openstack_networking_router_route_v2" "route" {
-  count             = min(length(var.destination_cidrs), length(var.next_hops))
+  count             = length(var.destination_cidrs)
   region            = var.region_name
 
   router_id         = var.router_id
