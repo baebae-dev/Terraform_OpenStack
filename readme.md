@@ -49,11 +49,15 @@
 > 기존 리소스 중 사용할 리소스는 반드시 output 파일에 명시하여야 사용가능    
 > output에 명시된 리소스를 사용하여 원하는 작업 진행   
 > ``data "terraform_remote_state"``로 remote state file 가져와서 작업함.
+- state file merge
+> [/state_merge 폴더](https://cbt-gitlab.gov.kakaoicloud.com/bell.coco/govcloud-terraform/-/tree/master/state_merge) 참고
 
 ## Project Structure
 ```
 📦govcloud-terraform
  ┣ 📂service
+ ┃ ┣ 📂catalog_001
+ ┃ ┗ 📂remote_state_use
  ┣ 📂functions
  ┃ ┣ 📜bastion-instance.tf
  ┃ ┣ 📜instances.tf
@@ -119,12 +123,6 @@
  ┃ ┃ ┣ 📜variables.tf
  ┃ ┃ ┣ 📜version.tf
  ┃ ┃ ┗ 📜volume.tf
- ┣ 📂remote_state_test      # remote_state 작업
- ┃ ┣ 📜backend_use.tf       # remtoe state 파일 불러와 사용 예시 
- ┃ ┣ 📜objectStorage.tf
- ┃ ┣ 📜outputs.tf
- ┃ ┣ 📜terraform.tf
- ┃ ┗ 📜variables.tf
  ┣ 📜.gitignore
  ┣ 📜env.sh           # openAPI 인증 관련 계정값 
  ┣ 📜auth.sh          # openAPI 사용 인증
