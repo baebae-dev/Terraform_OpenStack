@@ -1,5 +1,5 @@
 module "main" {
-  source = "./service/catalog_002"
+  source = "service/catalog_001"
 
   # openAPI
   auth_url                     = var.auth_url

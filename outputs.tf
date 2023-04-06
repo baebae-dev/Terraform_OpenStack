@@ -1,3 +1,3 @@
-#output "pub_interface_port_ip" {
-#  value = module.main.pub_interface_port_ip
-#}
+output "priv_instance_id" {
+  value = module.main.priv_instance_id
+}
