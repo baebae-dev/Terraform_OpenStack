@@ -31,7 +31,8 @@ echo $X_Auth_Token
 echo "=========================================="
 rm result_Object_storage_header.txt
 
-export remote_state_filenm="terraform-tt.tfstate"
+today=$(date "+%Y%m%d%H%M")
+export remote_state_filenm="terraform-${today}.tfstate"
 export object_storage_url="https://gov-cbt-objectstorage.kakaoicloud.in/v1/8323ba34b836415a98bc45c8b715dcfc/remote-state/${remote_state_filenm}"
 
 # backend 파일 전송
