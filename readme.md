@@ -56,8 +56,8 @@
 ```
 📦govcloud-terraform
  ┣ 📂service
- ┃ ┣ 📂catalog_001
- ┃ ┗ 📂remote_state_use
+ ┃ ┣ 📂catalog_001          
+ ┃ ┗ 📂remote_state_use     # 원격 상태파일 사용 예시
  ┣ 📂functions
  ┃ ┣ 📜bastion-instance.tf
  ┃ ┣ 📜instances.tf
@@ -135,5 +135,6 @@
  ┣ 📜terraform.tfstate
  ┣ 📜variables.tf
  ┣ 📜terraform.tfvars
+ ┣ 📜terragrunt.hcl   # terragrunt 사용을 위한 설정 파일 
  ┗ 📜versions.tf 
 ```
