@@ -42,7 +42,8 @@
 - state file 업로드
 > terraform 생성 작업 완료 후    
 > remote container 없을 경우 먼저 생성 (있는 경우 스킵)
-> backend.sh에 변수 "object_storage_url"에 생성한 remote container 접근 url 작성   
+> backend.sh에 변수 "object_storage_url"에 생성한 remote container 접근 url 작성  
+> object_storage url 형식 : {{object storage endpoint}}/v1/{{project id}}/{{사용자가 생성한 컨테이너}}
 > ``sh backend.sh`` 로 terraform.state 파일 remote container에 업로드   
 - state file 사용   
 > [remote_state_test/backend_use.tf](https://cbt-gitlab.gov.kakaoicloud.com/bell.coco/govcloud-terraform/-/blob/remote_state/remote_state_test/backend_use.tf) 참고   
