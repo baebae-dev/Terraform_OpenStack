@@ -6,10 +6,10 @@
 
 ## 여러 상태파일 merge  
 ### prerequire   
-merge할 기존 상태파일을 object storage에서 다운받아 /state_merge 폴더로 가져옴.   
+- merge할 기존 상태파일을 object storage에서 다운받아 [/state_merge](https://cbt-gitlab.gov.kakaoicloud.com/bell.coco/govcloud-terraform/-/tree/master/state_merge) 폴더로 가져옴.
+- [destfile 변수](https://cbt-gitlab.gov.kakaoicloud.com/bell.coco/govcloud-terraform/-/blob/master/state_merge/merge.sh#L45)에 최종 상태파일 지정
 ```
-sh merge.sh {새 상태파일} {기존 상태파일}       
-ex. sh merge.sh source.tfstate terraform.tfstate 
+sh merge.sh 
 ```
 
 ## 파일 내 함수 설명
