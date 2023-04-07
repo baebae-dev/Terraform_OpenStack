@@ -105,7 +105,12 @@ variable "endpoint_override_url" {
 }
 
 # remote state
-variable "backend_address" {
+variable "object_storage_api" {
+  type    = string
+  default = ""
+}
+
+variable "tfstate_filenm" {
   type    = string
   default = ""
 }

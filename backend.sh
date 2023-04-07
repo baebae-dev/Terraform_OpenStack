@@ -33,7 +33,7 @@ rm result_Object_storage_header.txt
 
 today=$(date "+%Y%m%d%H%M")
 export remote_state_filenm="terraform-${today}.tfstate"
-export object_storage_url="https://gov-cbt-objectstorage.kakaoicloud.in/v1/8323ba34b836415a98bc45c8b715dcfc/remote-state/${remote_state_filenm}"
+export object_storage_url="https://gov-cbt-objectstorage.kakaoicloud.in/v1/${tenant_id}/remote-state/${remote_state_filenm}"
 
 # backend 파일 전송
 echo "curl -i ${object_storage_url} -X  PUT -d "@terraform.tfstatevv" -H \"X-Auth-Token: ${X_Auth_Token}\""

@@ -52,7 +52,7 @@ module "main" {
   prefix                      = var.prefix
 
   # backend
-  backend_address              = var.backend_address
+  backend_address              = "${var.object_storage_api}${var.tenant_id}/${var.remote_state_name}/${var.tfstate_filenm}"
 
   # openAPI
   auth_url                     = var.auth_url
