@@ -2,8 +2,8 @@ module "routing_table_ext" {
   source            = "../../primitives/network/router/route"
   router_id         = module.vpc.ext_router_id
   destination_cidrs = var.private_subnet_cidrs
-  next_hops         = module.vpc.pub_interface_port_ip
-#  ["192.168.1.215"] // priv router interface port
+  next_hops         = module.vpc.pub_interface_port_ip // priv router interface port
+#  ["192.168.1.215"]
 
   depends_on = [
     module.vpc,
