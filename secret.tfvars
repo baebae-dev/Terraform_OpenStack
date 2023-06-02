@@ -1,8 +1,0 @@
-tenant_id = "8323ba34b836415a98bc45c8b715dcfc"
-auth_url = "https://cbt-openapi.gov.kakaoicloud.com/api/identity/v3/"
-endpoint_override_url = "https://cbt-openapi.gov.kakaoicloud.com/api"
-user_domain_name = "20211123143107@kakaoenterprise.com"
-openapi_user_name = "TF20230309180554-open-api"
-openapi_user_password = "{f9T9aknpkTgQZfKV99LB68nRNhwFqjrncDzsnYGPgu4=}5f0c909e2614554c3ab551a0cc01df4a2d3719644dddf1c95c5644e5d3221dab"
-object_storage_user_name = "TF20230309180554-object-storage"
-object_storage_user_password = "{3RlCtdTtwybGDRIjcVhiu97Xtu23OZGSVwDAp38kTfY=}7f9323e3df864982c1ab129ed97d4b599f5f059b6cb3031533fbd64559215ab2"
