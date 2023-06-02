@@ -1,4 +1,4 @@
-# Terraform으로 공공 클라우드 설치하기
+# Terraform
 ## 리소스 생성 방법
 
 ### terraform 실행
